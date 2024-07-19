@@ -2,12 +2,50 @@ $gray-10: #dddddd; // input basic border-color
 $gray-20: #aaaaaa; // input placehodler
 $blue-10: #005eea; // input focus border-color
 $red-10: #ea0000; // input focus border-color
+$white: #ffffff;
 $radius-10: 4px; // input basic border-radius
-$transition: all 0.2s linear;
+$transition: all 0.1s linear;
 $height-10: 32px; // input height
+
+// ===================================== Button =====================================
+%btn {
+  height: $height-10;
+  padding: 0 12px;
+  border-radius: $radius-10;
+  transition: $transition;
+}
+.btn {
+  // primary button
+  &__primary {
+    @extend %btn;
+    background: rgb(255, 140, 0);
+    border: 1px solid rgb(255, 115, 0);
+    color: $white;
+    &:hover {
+      background: rgb(255, 119, 0);
+    }
+    // primary button / width full(login button)
+    &--full {
+      @extend .btn__primary;
+      flex: 1 1 0%;
+      width: 100%;
+    }
+  }
+  // line button
+  &__line {
+    @extend %btn;
+    border: 1px solid $gray-10;
+    &:hover {
+      background: #cfddee;
+      color: $blue-10;
+    }
+  }
+}
+// ===================================== Input =====================================
 
 .cm-input {
   display: inline-block;
+  flex: 1 1 0%;
   position: relative;
   width: 100%;
 
@@ -50,46 +88,58 @@ $height-10: 32px; // input height
     }
   }
 
-  // input[type="number"] 일 경우
-  // &--number {
-  //   width: 100px;
-  //   input {
-  //     padding-right: 30px;
-  //   }
-  //   &__btn {
-  //     display: flex;
-  //     flex-flow: column;
-  //     position: absolute;
-  //     right: 0;
-  //     top: 50%;
-  //     transform: translateY(-50%);
-  //     button {
-  //       width: 20px;
-  //       height: calc($height-10 / 2);
-  //       border: 1px solid $gray-10;
-  //       // 증가 버튼
-  //       &:first-child {
-  //         background: rgb(231, 249, 255);
-  //         border-radius: 0 $radius-10 0 0;
-  //       }
-  //       // 감소 버튼
-  //       &:last-child {
-  //         background: rgb(231, 249, 255);
-  //         border-radius: 0 0 $radius-10 0;
-  //       }
-  //     }
-  //   }
-  // }
+  // input[type='number'] 일 경우
+  &-number {
+    flex: none;
+    width: 100px;
+    outline: 0;
+    input {
+      padding-right: 30px;
+      transition: none;
+      &:focus {
+        outline: 0;
+        & + .cm-input-number__btn {
+          button {
+            border-color: $blue-10;
+          }
+        }
+      }
+    }
+    &__btn {
+      display: flex;
+      flex-flow: column;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      button {
+        width: 20px;
+        height: calc($height-10 / 2);
+        border: 1px solid $gray-10;
+        // 증가 버튼
+        &:first-child {
+          background: rgb(231, 249, 255);
+          border-radius: 0 $radius-10 0 0;
+          border-bottom: 0;
+        }
+        // 감소 버튼
+        &:last-child {
+          background: rgb(231, 249, 255);
+          border-radius: 0 0 $radius-10 0;
+        }
+      }
+    }
+  }
 
-  // // input[type="number"] spinner 제거 (Chrome, Safari, Edge, Opera)
-  // input::-webkit-outer-spin-button,
-  // input::-webkit-inner-spin-button {
-  //   -webkit-appearance: none;
-  //   margin: 0;
-  // }
+  // input[type="number"] spinner 제거 (Chrome, Safari, Edge, Opera)
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 
-  // // input[type="number"] spinner 제거 (Firefox)
-  // input[type='number'] {
-  //   -moz-appearance: textfield;
-  // }
+  // input[type="number"] spinner 제거 (Firefox)
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
 }

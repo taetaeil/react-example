@@ -1,21 +1,21 @@
-import styles from './cm.module.scss'
+import styles from './cm.module.scss' // css 파일
 
-// // number input (스피너가 있는 인풋 필드)
-// export function CmNumberInput(props: {
-//   isError?: boolean // 에러일 경우
-// }) {
-//   return (
-//     <div className={`${styles['cm-input']} ${styles['cm-input--number']}`}>
-//       <input type="number" />
-//       <div className={styles['cm-input--number__btn']}>
-//         <button type="button">+</button>
-//         <button type="button">-</button>
-//       </div>
-//     </div>
-//   )
-// }
+// ===================================== Number input (스피너가 있는 인풋 필드) =====================================
+export function CmNumberInput(props: {
+  isError?: boolean // 에러일 경우
+}) {
+  return (
+    <div className={`${styles['cm-input']} ${styles['cm-input-number']}`}>
+      <input type="number" />
+      <div className={styles['cm-input-number__btn']}>
+        <button type="button">+</button>
+        <button type="button">-</button>
+      </div>
+    </div>
+  )
+}
 
-// Basic input
+// ===================================== Basic input =====================================
 export function CmBasicInput(props: {
   isReset?: boolean // 초기화 버튼
   isSecret?: boolean // 비밀번호 감추기 버튼
@@ -25,11 +25,9 @@ export function CmBasicInput(props: {
 }) {
   return (
     <div
-      className={`${styles['cm-input']}  ${
-        props.type === 'number' ? styles['cm-input--number'] : ''
-      } ${props.isError ? styles['cm-input--error'] : ''} ${
-        styles['cm-input__btn']
-      }`}
+      className={`${styles['cm-input']} ${
+        props.isError ? styles['cm-input--error'] : ''
+      } ${styles['cm-input__btn']}`}
     >
       <input
         type={props.type ? props.type : 'text'}
@@ -44,6 +42,7 @@ export function CmBasicInput(props: {
   )
 }
 
+// ===================================== Page =====================================
 export default function Home() {
   return (
     <div style={{ padding: '20px' }}>
@@ -57,7 +56,60 @@ export default function Home() {
       >
         Common Components
       </h1>
-      {/* input */}
+      {/* Button */}
+      <h2
+        style={{
+          marginBottom: '16px',
+          paddingBottom: '8px',
+          borderBottom: '1px solid #dddddd',
+          fontWeight: '600',
+          fontSize: '18px',
+        }}
+      >
+        Button
+      </h2>
+      <ul style={{ padding: '0 15px' }}>
+        <li
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            marginBottom: '12px',
+          }}
+        >
+          <p style={{ width: '210px', color: '#444444' }}>btn__primary</p>
+          <button type="button" className={styles['btn__primary']}>
+            적용
+          </button>
+        </li>
+        <li
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            marginBottom: '12px',
+          }}
+        >
+          <p style={{ width: '210px', color: '#444444' }}>btn__primary--full</p>
+          <button type="button" className={styles['btn__primary--full']}>
+            적용
+          </button>
+        </li>
+        <li
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            marginBottom: '12px',
+          }}
+        >
+          <p style={{ width: '210px', color: '#444444' }}>btn__line</p>
+          <button type="button" className={styles['btn__line']}>
+            취소
+          </button>
+        </li>
+      </ul>
+      {/* Input */}
       <h2
         style={{
           marginBottom: '16px',
@@ -140,8 +192,7 @@ export default function Home() {
           <p style={{ width: '210px', color: '#444444' }}>
             넘버 타입의 인풋일 경우
           </p>
-          {/* <CmNumberInput></CmNumberInput> */}
-          element plus 사용
+          <CmNumberInput></CmNumberInput>
         </li>
       </ul>
     </div>
