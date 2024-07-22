@@ -1,6 +1,15 @@
+import * as React from 'react'
+
 import styles from './cm.module.scss' // css 파일
 
-// ===================================== Number input (스피너가 있는 인풋 필드) =====================================
+import MenuItem from '@mui/material/MenuItem'
+import FormControl from '@mui/material/FormControl'
+import Select from '@mui/material/Select'
+import FormControlLabel from '@mui/material/FormControlLabel'
+import Checkbox from '@mui/material/Checkbox'
+import Switch from '@mui/material/Switch'
+
+// --------------------------------------- Number input (스피너가 있는 인풋 필드) ---------------------------------------
 export function CmNumberInput(props: {
   isError?: boolean // 에러일 경우
 }) {
@@ -15,7 +24,7 @@ export function CmNumberInput(props: {
   )
 }
 
-// ===================================== Basic input =====================================
+// --------------------------------------- Basic input ---------------------------------------
 export function CmBasicInput(props: {
   isReset?: boolean // 초기화 버튼
   isSecret?: boolean // 비밀번호 감추기 버튼
@@ -42,7 +51,58 @@ export function CmBasicInput(props: {
   )
 }
 
-// ===================================== Page =====================================
+// --------------------------------------- Checkbox ---------------------------------------
+export function CmSwitch(props: {
+  disabled?: boolean
+  label?: string
+  required?: boolean
+}) {
+  return (
+    <div>
+      <FormControlLabel
+        required={props.required}
+        disabled={props.disabled}
+        control={<Switch />}
+        label={props.label}
+      />
+    </div>
+  )
+}
+
+// --------------------------------------- Checkbox ---------------------------------------
+export function CmCheckbox(props: {
+  disabled?: boolean
+  label?: string
+  required?: boolean
+}) {
+  return (
+    <FormControlLabel
+      required={props.required}
+      disabled={props.disabled}
+      control={<Checkbox />}
+      label={props.label}
+    />
+  )
+}
+
+// --------------------------------------- Select ---------------------------------------
+export function CmSelect() {
+  return (
+    <FormControl>
+      <Select
+        value="apple"
+        // onChange={handleChange}
+        inputProps={{ 'aria-label': 'Without label' }}
+      >
+        <MenuItem value="apple">apple</MenuItem>
+        <MenuItem value="banana">banana</MenuItem>
+        <MenuItem value="melon">melon</MenuItem>
+      </Select>
+    </FormControl>
+  )
+}
+
+// ====================================== Page ======================================
 export default function Home() {
   return (
     <div style={{ padding: '20px' }}>
@@ -56,7 +116,7 @@ export default function Home() {
       >
         Common Components
       </h1>
-      {/* Button */}
+      {/* --------------------------------------- Button --------------------------------------- */}
       <h2
         style={{
           marginBottom: '16px',
@@ -109,7 +169,57 @@ export default function Home() {
           </button>
         </li>
       </ul>
-      {/* Input */}
+      <h2
+        style={{
+          marginBottom: '16px',
+          paddingBottom: '8px',
+          borderBottom: '1px solid #dddddd',
+          fontWeight: '600',
+          fontSize: '18px',
+        }}
+      >
+        Form
+      </h2>
+      <ul style={{ padding: '0 15px' }}>
+        <li
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            marginBottom: '12px',
+          }}
+        >
+          <p style={{ width: '210px', color: '#444444' }}>Checkbox</p>
+          {/* --------------------------------------- Checkbox --------------------------------------- */}
+          <CmCheckbox label="Basic"></CmCheckbox>
+          <CmCheckbox label="Disabled" disabled></CmCheckbox>
+          <CmCheckbox label="Required" required></CmCheckbox>
+        </li>
+        <li
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            marginBottom: '12px',
+          }}
+        >
+          <p style={{ width: '210px', color: '#444444' }}>Switch</p>
+          {/* --------------------------------------- Switch --------------------------------------- */}
+          <CmSwitch></CmSwitch>
+        </li>
+        <li
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            marginBottom: '12px',
+          }}
+        >
+          <p style={{ width: '210px', color: '#444444' }}>Select</p>
+          {/* --------------------------------------- Select --------------------------------------- */}
+          <CmSelect></CmSelect>
+        </li>
+      </ul>
       <h2
         style={{
           marginBottom: '16px',
@@ -131,6 +241,7 @@ export default function Home() {
           }}
         >
           <p style={{ width: '210px', color: '#444444' }}>Basic</p>
+          {/* --------------------------------------- BasicInput --------------------------------------- */}
           <CmBasicInput></CmBasicInput>
         </li>
         <li
@@ -144,6 +255,7 @@ export default function Home() {
           <p style={{ width: '210px', color: '#444444' }}>
             Use Placeholder 사용
           </p>
+          {/* --------------------------------------- BasicInput --------------------------------------- */}
           <CmBasicInput placeholder="아이디"></CmBasicInput>
         </li>
         <li
@@ -155,6 +267,7 @@ export default function Home() {
           }}
         >
           <p style={{ width: '210px', color: '#444444' }}>Error</p>
+          {/* --------------------------------------- BasicInput --------------------------------------- */}
           <CmBasicInput isError></CmBasicInput>
         </li>
         <li
@@ -166,6 +279,7 @@ export default function Home() {
           }}
         >
           <p style={{ width: '210px', color: '#444444' }}>Use Reset Button</p>
+          {/* --------------------------------------- BasicInput --------------------------------------- */}
           <CmBasicInput isReset></CmBasicInput>
         </li>
         <li
@@ -179,6 +293,7 @@ export default function Home() {
           <p style={{ width: '210px', color: '#444444' }}>
             Use password Open Button
           </p>
+          {/* --------------------------------------- BasicInput --------------------------------------- */}
           <CmBasicInput type="password" isSecret></CmBasicInput>
         </li>
         <li
@@ -190,8 +305,9 @@ export default function Home() {
           }}
         >
           <p style={{ width: '210px', color: '#444444' }}>
-            넘버 타입의 인풋일 경우
+            input &#91;type&#61;&quot;number&quot;&#93;
           </p>
+          {/* --------------------------------------- NumberInput --------------------------------------- */}
           <CmNumberInput></CmNumberInput>
         </li>
       </ul>
