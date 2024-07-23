@@ -1,6 +1,7 @@
 import * as React from 'react'
 
-import styles from './cm.module.scss' // css 파일
+import './cm.scss' // css 파일
+import CmHeader from './header' // header 컴포넌트
 
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
@@ -14,9 +15,9 @@ export function CmNumberInput(props: {
   isError?: boolean // 에러일 경우
 }) {
   return (
-    <div className={`${styles['cm-input']} ${styles['cm-input-number']}`}>
+    <div className="cm-input cm-input-number">
       <input type="number" />
-      <div className={styles['cm-input-number__btn']}>
+      <div className="cm-input-number__btn">
         <button type="button">+</button>
         <button type="button">-</button>
       </div>
@@ -34,9 +35,9 @@ export function CmBasicInput(props: {
 }) {
   return (
     <div
-      className={`${styles['cm-input']} ${
-        props.isError ? styles['cm-input--error'] : ''
-      } ${styles['cm-input__btn']}`}
+      className={`cm-input cm-input__btn ${
+        props.isError ? 'cm-input--error' : ''
+      }`}
     >
       <input
         type={props.type ? props.type : 'text'}
@@ -52,25 +53,23 @@ export function CmBasicInput(props: {
 }
 
 // --------------------------------------- Checkbox ---------------------------------------
-export function CmSwitch(props: {
+export function MuSwitch(props: {
   disabled?: boolean
   label?: string
   required?: boolean
 }) {
   return (
-    <div>
-      <FormControlLabel
-        required={props.required}
-        disabled={props.disabled}
-        control={<Switch />}
-        label={props.label}
-      />
-    </div>
+    <FormControlLabel
+      required={props.required}
+      disabled={props.disabled}
+      control={<Switch />}
+      label={props.label}
+    />
   )
 }
 
 // --------------------------------------- Checkbox ---------------------------------------
-export function CmCheckbox(props: {
+export function MuCheckbox(props: {
   disabled?: boolean
   label?: string
   required?: boolean
@@ -86,14 +85,10 @@ export function CmCheckbox(props: {
 }
 
 // --------------------------------------- Select ---------------------------------------
-export function CmSelect() {
+export function MuSelect() {
   return (
     <FormControl>
-      <Select
-        value="apple"
-        // onChange={handleChange}
-        inputProps={{ 'aria-label': 'Without label' }}
-      >
+      <Select value="apple">
         <MenuItem value="apple">apple</MenuItem>
         <MenuItem value="banana">banana</MenuItem>
         <MenuItem value="melon">melon</MenuItem>
@@ -116,9 +111,21 @@ export default function Home() {
       >
         Common Components
       </h1>
-      {/* --------------------------------------- Button --------------------------------------- */}
       <h2
         style={{
+          marginBottom: '16px',
+          paddingBottom: '8px',
+          borderBottom: '1px solid #dddddd',
+          fontWeight: '600',
+          fontSize: '18px',
+        }}
+      >
+        Header
+      </h2>
+      <CmHeader></CmHeader>
+      <h2
+        style={{
+          marginTop: '16px',
           marginBottom: '16px',
           paddingBottom: '8px',
           borderBottom: '1px solid #dddddd',
@@ -138,7 +145,8 @@ export default function Home() {
           }}
         >
           <p style={{ width: '210px', color: '#444444' }}>btn__primary</p>
-          <button type="button" className={styles['btn__primary']}>
+          {/* --------------------------------------- Button --------------------------------------- */}
+          <button type="button" className="btn__primary">
             적용
           </button>
         </li>
@@ -151,7 +159,8 @@ export default function Home() {
           }}
         >
           <p style={{ width: '210px', color: '#444444' }}>btn__primary--full</p>
-          <button type="button" className={styles['btn__primary--full']}>
+          {/* --------------------------------------- Button --------------------------------------- */}
+          <button type="button" className="btn__primary--full">
             적용
           </button>
         </li>
@@ -164,7 +173,8 @@ export default function Home() {
           }}
         >
           <p style={{ width: '210px', color: '#444444' }}>btn__line</p>
-          <button type="button" className={styles['btn__line']}>
+          {/* --------------------------------------- Button --------------------------------------- */}
+          <button type="button" className="btn__line">
             취소
           </button>
         </li>
@@ -191,9 +201,9 @@ export default function Home() {
         >
           <p style={{ width: '210px', color: '#444444' }}>Checkbox</p>
           {/* --------------------------------------- Checkbox --------------------------------------- */}
-          <CmCheckbox label="Basic"></CmCheckbox>
-          <CmCheckbox label="Disabled" disabled></CmCheckbox>
-          <CmCheckbox label="Required" required></CmCheckbox>
+          <MuCheckbox label="Basic"></MuCheckbox>
+          <MuCheckbox label="Disabled" disabled></MuCheckbox>
+          <MuCheckbox label="Required" required></MuCheckbox>
         </li>
         <li
           style={{
@@ -205,7 +215,7 @@ export default function Home() {
         >
           <p style={{ width: '210px', color: '#444444' }}>Switch</p>
           {/* --------------------------------------- Switch --------------------------------------- */}
-          <CmSwitch></CmSwitch>
+          <MuSwitch></MuSwitch>
         </li>
         <li
           style={{
@@ -217,7 +227,7 @@ export default function Home() {
         >
           <p style={{ width: '210px', color: '#444444' }}>Select</p>
           {/* --------------------------------------- Select --------------------------------------- */}
-          <CmSelect></CmSelect>
+          <MuSelect></MuSelect>
         </li>
       </ul>
       <h2

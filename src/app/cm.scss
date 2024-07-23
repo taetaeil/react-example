@@ -1,11 +1,91 @@
 $gray-10: #dddddd; // input basic border-color
 $gray-20: #aaaaaa; // input placehodler
 $blue-10: #005eea; // input focus border-color
+$blue-20: #24253c; // input focus border-color
 $red-10: #ea0000; // input focus border-color
 $white: #ffffff;
 $radius-10: 4px; // input basic border-radius
 $transition: all 0.1s linear;
 $height-10: 32px; // input height
+
+// ===================================== Header =====================================
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  padding: 0 10px;
+  background: $blue-20;
+  color: $gray-20;
+  &__menu {
+    &--title {
+      border-bottom: 1px solid $blue-20;
+    }
+    &--error {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      margin: 0 6px;
+      background: $red-10;
+      border-radius: 50%;
+    }
+    &--warning {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      margin: 0 6px;
+      background: rgb(255, 204, 0);
+      border-radius: 50%;
+    }
+  }
+  &__utils {
+    display: flex;
+    align-items: center;
+  }
+  &__refresh-time {
+    position: relative;
+    padding: 0 6px;
+    margin-right: 12px;
+    border-radius: $radius-10;
+    &:hover {
+      background: rgb(66, 63, 63);
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -6px;
+      height: 16px;
+      width: 1px;
+      background: $gray-10;
+      transform: translateY(-50%);
+    }
+  }
+  &__btn {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid $gray-10;
+    background: rgb(66, 63, 63);
+    &:hover {
+      background: rgb(107, 103, 103);
+    }
+    &--noti {
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 8px;
+        height: 8px;
+        background: orange;
+        border-radius: 50%;
+      }
+    }
+  }
+}
 
 // ===================================== Button =====================================
 %btn {
@@ -141,5 +221,20 @@ $height-10: 32px; // input height
   // input[type="number"] spinner 제거 (Firefox)
   input[type='number'] {
     -moz-appearance: textfield;
+  }
+}
+
+// ===================================== MuPopup =====================================
+.MuiDialog-container {
+  .MuiPaper-root {
+    width: 100%;
+    .MuiDialogTitle-root {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid $gray-10;
+    }
+    .MuiDialogContent-root {
+      padding: 20px;
+    }
   }
 }

@@ -25,3 +25,17 @@
     )
     rgb(var(--background-start-rgb));
 } */
+/* ============= ScrollBar ============= */
+* {
+  &::-webkit-scrollbar {
+    width: 20px;
+    height: 20px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border: 7px solid transparent;
+    background-clip: padding-box;
+    background-color: gray;
+    border-radius: 12px;
+  }
+}
