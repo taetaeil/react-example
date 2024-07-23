@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import './cm.scss' // css 파일
+import './common.scss' // css 파일
 
 import MuPopup from './MuPopup' // 설정팝업
 

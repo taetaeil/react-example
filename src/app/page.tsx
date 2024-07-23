@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import './cm.scss' // css 파일
+import './common.scss' // css 파일
 import CmHeader from './header' // header 컴포넌트
 
 import MenuItem from '@mui/material/MenuItem'
