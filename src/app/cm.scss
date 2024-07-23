@@ -38,41 +38,41 @@ $height-10: 32px; // input height
       border-radius: 50%;
     }
   }
-  &__utils {
+  &__btns {
     display: flex;
     align-items: center;
-  }
-  &__refresh-time {
-    position: relative;
-    padding: 0 6px;
-    margin-right: 12px;
-    border-radius: $radius-10;
-    &:hover {
+    &--square {
+      position: relative;
+      padding: 0 6px;
+      margin-right: 12px;
+      border-radius: $radius-10;
+      &:hover {
+        background: rgb(66, 63, 63);
+      }
+      // &::after {
+      //   content: '';
+      //   position: absolute;
+      //   top: 50%;
+      //   right: -6px;
+      //   height: 16px;
+      //   width: 1px;
+      //   background: $gray-10;
+      //   transform: translateY(-50%);
+      // }
+    }
+    &--circle {
+      position: relative;
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1px solid $gray-10;
       background: rgb(66, 63, 63);
+      &:hover {
+        background: rgb(107, 103, 103);
+      }
     }
-    &::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      right: -6px;
-      height: 16px;
-      width: 1px;
-      background: $gray-10;
-      transform: translateY(-50%);
-    }
-  }
-  &__btn {
-    position: relative;
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border: 1px solid $gray-10;
-    background: rgb(66, 63, 63);
-    &:hover {
-      background: rgb(107, 103, 103);
-    }
-    &--noti {
+    &--badage {
       &:after {
         content: '';
         position: absolute;

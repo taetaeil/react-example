@@ -13,32 +13,25 @@ import Popover from '@mui/material/Popover'
 
 // --------------------------------------- Menu ---------------------------------------
 export function MuMenu(props: {
-  isNoti?: boolean
-  imgSrc?: string
-  imgAlt?: string
   options: Array<any>
+  trigger: React.ReactNode
 }) {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
-  const open = Boolean(anchorEl)
+  const [menuTrigger, setMenuTrigger] = React.useState<null | HTMLElement>(null)
+  const open = Boolean(menuTrigger)
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget)
+    setMenuTrigger(event.currentTarget)
   }
   const handleClose = () => {
-    setAnchorEl(null)
+    setMenuTrigger(null)
   }
   return (
     <div className="header__menu">
-      <button
-        type="button"
-        id="long-button"
-        onClick={handleClick}
-        className={`header__btn ${props.isNoti ? 'header__btn--noti' : ''}`}
-      >
-        <img src={props.imgSrc} alt={props.imgAlt} />
+      <button type="button" id="long-button" onClick={handleClick}>
+        {props.trigger}
       </button>
       <Menu
         id="long-menu"
-        anchorEl={anchorEl}
+        anchorEl={menuTrigger}
         open={open}
         onClose={handleClose}
       >
@@ -67,7 +60,7 @@ export function MuMenu(props: {
 }
 
 // --------------------------------------- Header ---------------------------------------
-const option = [
+const notiList = [
   {
     status: 'error',
     name: 'AS1-MO-0101',
@@ -101,57 +94,111 @@ const option = [
 ]
 
 export default function CmHeader() {
-  const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null)
+  // 새로고침(9분 50초전)
+  const [resetTrigger, setResetTrigger] = React.useState<HTMLElement | null>(
+    null
+  )
 
   const handlePopoverOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget)
+    setResetTrigger(event.currentTarget)
   }
 
   const handlePopoverClose = () => {
+    setResetTrigger(null)
+  }
+  const openReset = Boolean(resetTrigger)
+
+  // 알림버튼
+  const isNoti = true
+
+  // 로그아웃버튼(김코난)
+  const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null)
+
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget)
+  }
+
+  const handleClose = () => {
     setAnchorEl(null)
   }
-  const open = Boolean(anchorEl)
+
+  const openLogout = Boolean(anchorEl)
+  const id = openLogout ? 'simple-popover' : undefined
 
   return (
     <header className="header">
       <h1>K-PHM cloud</h1>
-      <div className="header__utils">
-        <div>
-          <button
-            type="button"
-            aria-owns={open ? 'mouse-over-popover' : undefined}
-            aria-haspopup="true"
-            onMouseEnter={handlePopoverOpen}
-            onMouseLeave={handlePopoverClose}
-            className="header__refresh-time"
-          >
-            9분 50초전
-          </button>
-          <Popover
-            id="mouse-over-popover"
-            sx={{
-              pointerEvents: 'none',
-            }}
-            open={open}
-            anchorEl={anchorEl}
-            anchorOrigin={{
-              vertical: 'bottom',
-              horizontal: 'right',
-            }}
-            onClose={handlePopoverClose}
-            disableRestoreFocus
-          >
-            <span>새로고침</span>
-          </Popover>
-        </div>
-        <button type="button"></button>
-        <MuMenu isNoti imgSrc="" imgAlt="알" options={option}></MuMenu>
+      <div className="header__btns">
+        {/* =========================== 시간 =========================== */}
+        <button
+          type="button"
+          aria-owns={openReset ? 'mouse-over-popover' : undefined}
+          aria-haspopup="true"
+          onMouseEnter={handlePopoverOpen}
+          onMouseLeave={handlePopoverClose}
+          className="header__btns--square"
+        >
+          9분 50초전
+        </button>
+        <Popover
+          id="mouse-over-popover"
+          sx={{
+            pointerEvents: 'none',
+          }}
+          open={openReset}
+          anchorEl={resetTrigger}
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'right',
+          }}
+          onClose={handlePopoverClose}
+          disableRestoreFocus
+        >
+          <span>새로고침</span>
+        </Popover>
+
+        {/* =========================== 알람 =========================== */}
+        <MuMenu
+          options={notiList}
+          trigger={
+            <span
+              className={`header__btns--circle ${
+                isNoti ? 'header__btns--badage' : ''
+              }`}
+            >
+              <img src="" alt="알" />
+            </span>
+          }
+        ></MuMenu>
+
+        {/* =========================== 설정 =========================== */}
         <MuPopup
           title="설정"
-          trigger={<span className="header__btn">설</span>}
+          trigger={<span className="header__btns--circle">설</span>}
           contents={<div>내용</div>}
         ></MuPopup>
-        <button type="button">김코난</button>
+
+        {/* =========================== 김코난 =========================== */}
+        <button
+          type="button"
+          className="header__btns--square"
+          aria-describedby={id}
+          onClick={handleClick}
+        >
+          김코난
+        </button>
+        <Popover
+          id={id}
+          open={openLogout}
+          anchorEl={anchorEl}
+          onClose={handleClose}
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'left',
+          }}
+        >
+          로그아웃
+        </Popover>
       </div>
     </header>
   )
