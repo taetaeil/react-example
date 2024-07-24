@@ -8,6 +8,7 @@ import MuPopup from './MuPopup' // 설정팝업
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import Popover from '@mui/material/Popover'
+import Tooltip from '@mui/material/Tooltip'
 
 // const ITEM_HEIGHT = 48
 
@@ -130,32 +131,18 @@ export default function CmHeader() {
       <h1>K-PHM cloud</h1>
       <div className="header__btns">
         {/* =========================== 시간 =========================== */}
-        <button
-          type="button"
-          aria-owns={openReset ? 'mouse-over-popover' : undefined}
-          aria-haspopup="true"
-          onMouseEnter={handlePopoverOpen}
-          onMouseLeave={handlePopoverClose}
-          className="header__btns--square"
-        >
-          9분 50초전
-        </button>
-        <Popover
-          id="mouse-over-popover"
-          sx={{
-            pointerEvents: 'none',
-          }}
-          open={openReset}
-          anchorEl={resetTrigger}
-          anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'right',
-          }}
-          onClose={handlePopoverClose}
-          disableRestoreFocus
-        >
-          <span>새로고침</span>
-        </Popover>
+        <Tooltip title="새로고침" placement="bottom-end">
+          <button
+            type="button"
+            aria-owns={openReset ? 'mouse-over-popover' : undefined}
+            aria-haspopup="true"
+            onMouseEnter={handlePopoverOpen}
+            onMouseLeave={handlePopoverClose}
+            className="header__btns--square"
+          >
+            9분 50초전
+          </button>
+        </Tooltip>
 
         {/* =========================== 알람 =========================== */}
         <MuMenu
@@ -197,7 +184,7 @@ export default function CmHeader() {
             horizontal: 'left',
           }}
         >
-          로그아웃
+          <button type="button">로그아웃</button>
         </Popover>
       </div>
     </header>

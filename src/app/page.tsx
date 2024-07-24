@@ -2,6 +2,8 @@ import * as React from 'react'
 
 import './common.scss' // css 파일
 import CmHeader from './header' // header 컴포넌트
+import MuTab from './Tap' // header 컴포넌트
+import CmSidebar from './Sidebar' // header 컴포넌트
 
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
@@ -9,6 +11,7 @@ import Select from '@mui/material/Select'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Checkbox from '@mui/material/Checkbox'
 import Switch from '@mui/material/Switch'
+import Tooltip from '@mui/material/Tooltip'
 
 // --------------------------------------- Number input (스피너가 있는 인풋 필드) ---------------------------------------
 export function CmNumberInput(props: {
@@ -52,7 +55,7 @@ export function CmBasicInput(props: {
   )
 }
 
-// --------------------------------------- Checkbox ---------------------------------------
+// --------------------------------------- Switch ---------------------------------------
 export function MuSwitch(props: {
   disabled?: boolean
   label?: string
@@ -97,6 +100,11 @@ export function MuSelect() {
   )
 }
 
+// --------------------------------------- Accordion ---------------------------------------
+export function MuAccordion() {
+  return <div>아코디언</div>
+}
+
 // ====================================== Page ======================================
 export default function Home() {
   return (
@@ -122,7 +130,40 @@ export default function Home() {
       >
         Header
       </h2>
-      <CmHeader></CmHeader>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '8px',
+          marginBottom: '12px',
+        }}
+      >
+        {/* ---------------------------------------  --------------------------------------- */}
+        <CmHeader></CmHeader>
+      </div>
+      <h2
+        style={{
+          marginBottom: '16px',
+          paddingBottom: '8px',
+          borderBottom: '1px solid #dddddd',
+          fontWeight: '600',
+          fontSize: '18px',
+        }}
+      >
+        Sidebar
+      </h2>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '8px',
+          marginBottom: '12px',
+        }}
+      >
+        {/* ---------------------------------------  --------------------------------------- */}
+
+        <CmSidebar></CmSidebar>
+      </div>
       <h2
         style={{
           marginTop: '16px',
@@ -229,6 +270,44 @@ export default function Home() {
           {/* --------------------------------------- Select --------------------------------------- */}
           <MuSelect></MuSelect>
         </li>
+        <li
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            marginBottom: '12px',
+          }}
+        >
+          <p style={{ width: '210px', color: '#444444' }}>Accordion</p>
+          {/* --------------------------------------- Accordion --------------------------------------- */}
+          <MuAccordion></MuAccordion>
+        </li>
+        <li
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            marginBottom: '12px',
+          }}
+        >
+          <p style={{ width: '210px', color: '#444444' }}>Tab</p>
+          {/* --------------------------------------- Tab --------------------------------------- */}
+          <MuTab></MuTab>
+        </li>
+        <li
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            marginBottom: '12px',
+          }}
+        >
+          <p style={{ width: '210px', color: '#444444' }}>Tooltip</p>
+          {/* --------------------------------------- Tooltip --------------------------------------- */}
+          <Tooltip title="힝 속았지?">
+            <div>나는야 버튼!</div>
+          </Tooltip>
+        </li>
       </ul>
       <h2
         style={{
@@ -320,6 +399,14 @@ export default function Home() {
           {/* --------------------------------------- NumberInput --------------------------------------- */}
           <CmNumberInput></CmNumberInput>
         </li>
+        <li
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            marginBottom: '12px',
+          }}
+        ></li>
       </ul>
     </div>
   )
