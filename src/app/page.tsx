@@ -3,7 +3,7 @@ import * as React from 'react'
 import './common.scss' // css 파일
 import CmHeader from './header' // header 컴포넌트
 import CmTab from './Tap' // header 컴포넌트
-import CmSidebar from './Sidebar' // header 컴포넌트
+import CmSidebar from './Sidebar' // sidebar 컴포넌트
 
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
@@ -140,29 +140,6 @@ export default function Home() {
       >
         {/* ---------------------------------------  --------------------------------------- */}
         <CmHeader></CmHeader>
-      </div>
-      <h2
-        style={{
-          marginBottom: '16px',
-          paddingBottom: '8px',
-          borderBottom: '1px solid #dddddd',
-          fontWeight: '600',
-          fontSize: '18px',
-        }}
-      >
-        Sidebar
-      </h2>
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '8px',
-          marginBottom: '12px',
-        }}
-      >
-        {/* ---------------------------------------  --------------------------------------- */}
-
-        <CmSidebar></CmSidebar>
       </div>
       <h2
         style={{
