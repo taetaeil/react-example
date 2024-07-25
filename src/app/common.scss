@@ -265,8 +265,18 @@ $height-10: 32px; // input height
       .sidebar__content {
         height: 100%;
         margin-right: 20px;
+        padding: 20px 15px;
         background: $white;
         border-right: 1px solid $gray-10;
+      }
+    }
+  }
+  .MuiRichTreeView-root {
+    .MuiTreeItem-root {
+      .MuiTreeItem-label {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
     }
   }

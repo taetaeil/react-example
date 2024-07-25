@@ -3,6 +3,7 @@
 import React, { ReactNode } from 'react'
 import { styled, Theme, CSSObject } from '@mui/material/styles'
 import MuiDrawer from '@mui/material/Drawer'
+import CmTree from './CmTree' // 트리메뉴
 
 const drawerWidth = 240
 
@@ -68,7 +69,9 @@ export default function MiniDrawer(props: { contents: ReactNode }) {
               >
                 &lt;
               </button>
-              <div>내용</div>
+              <div>
+                <CmTree></CmTree>
+              </div>
             </>
           ) : (
             <button
