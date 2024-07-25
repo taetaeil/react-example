@@ -3,7 +3,7 @@
 import * as React from 'react'
 import './common.scss' // css 파일
 
-import MuPopup from './MuPopup' // 설정팝업
+import CmPopup from './CmPopup' // 설정팝업
 
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
@@ -13,7 +13,7 @@ import Tooltip from '@mui/material/Tooltip'
 // const ITEM_HEIGHT = 48
 
 // --------------------------------------- Menu ---------------------------------------
-export function MuMenu(props: {
+export function CmMenu(props: {
   options: Array<any>
   trigger: React.ReactNode
 }) {
@@ -145,7 +145,7 @@ export default function CmHeader() {
         </Tooltip>
 
         {/* =========================== 알람 =========================== */}
-        <MuMenu
+        <CmMenu
           options={notiList}
           trigger={
             <span
@@ -156,14 +156,14 @@ export default function CmHeader() {
               <img src="" alt="알" />
             </span>
           }
-        ></MuMenu>
+        ></CmMenu>
 
         {/* =========================== 설정 =========================== */}
-        <MuPopup
+        <CmPopup
           title="설정"
           trigger={<span className="header__btns--circle">설</span>}
           contents={<div>내용</div>}
-        ></MuPopup>
+        ></CmPopup>
 
         {/* =========================== 김코난 =========================== */}
         <button

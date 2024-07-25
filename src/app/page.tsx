@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import './common.scss' // css 파일
 import CmHeader from './header' // header 컴포넌트
-import MuTab from './Tap' // header 컴포넌트
+import CmTab from './Tap' // header 컴포넌트
 import CmSidebar from './Sidebar' // header 컴포넌트
 
 import MenuItem from '@mui/material/MenuItem'
@@ -56,7 +56,7 @@ export function CmBasicInput(props: {
 }
 
 // --------------------------------------- Switch ---------------------------------------
-export function MuSwitch(props: {
+export function CmSwitch(props: {
   disabled?: boolean
   label?: string
   required?: boolean
@@ -72,7 +72,7 @@ export function MuSwitch(props: {
 }
 
 // --------------------------------------- Checkbox ---------------------------------------
-export function MuCheckbox(props: {
+export function CmCheckbox(props: {
   disabled?: boolean
   label?: string
   required?: boolean
@@ -88,7 +88,7 @@ export function MuCheckbox(props: {
 }
 
 // --------------------------------------- Select ---------------------------------------
-export function MuSelect() {
+export function CmSelect() {
   return (
     <FormControl>
       <Select value="apple">
@@ -101,7 +101,7 @@ export function MuSelect() {
 }
 
 // --------------------------------------- Accordion ---------------------------------------
-export function MuAccordion() {
+export function CmAccordion() {
   return <div>아코디언</div>
 }
 
@@ -242,9 +242,9 @@ export default function Home() {
         >
           <p style={{ width: '210px', color: '#444444' }}>Checkbox</p>
           {/* --------------------------------------- Checkbox --------------------------------------- */}
-          <MuCheckbox label="Basic"></MuCheckbox>
-          <MuCheckbox label="Disabled" disabled></MuCheckbox>
-          <MuCheckbox label="Required" required></MuCheckbox>
+          <CmCheckbox label="Basic"></CmCheckbox>
+          <CmCheckbox label="Disabled" disabled></CmCheckbox>
+          <CmCheckbox label="Required" required></CmCheckbox>
         </li>
         <li
           style={{
@@ -256,7 +256,7 @@ export default function Home() {
         >
           <p style={{ width: '210px', color: '#444444' }}>Switch</p>
           {/* --------------------------------------- Switch --------------------------------------- */}
-          <MuSwitch></MuSwitch>
+          <CmSwitch></CmSwitch>
         </li>
         <li
           style={{
@@ -268,7 +268,7 @@ export default function Home() {
         >
           <p style={{ width: '210px', color: '#444444' }}>Select</p>
           {/* --------------------------------------- Select --------------------------------------- */}
-          <MuSelect></MuSelect>
+          <CmSelect></CmSelect>
         </li>
         <li
           style={{
@@ -280,7 +280,7 @@ export default function Home() {
         >
           <p style={{ width: '210px', color: '#444444' }}>Accordion</p>
           {/* --------------------------------------- Accordion --------------------------------------- */}
-          <MuAccordion></MuAccordion>
+          <CmAccordion></CmAccordion>
         </li>
         <li
           style={{
@@ -292,7 +292,7 @@ export default function Home() {
         >
           <p style={{ width: '210px', color: '#444444' }}>Tab</p>
           {/* --------------------------------------- Tab --------------------------------------- */}
-          <MuTab></MuTab>
+          <CmTab></CmTab>
         </li>
         <li
           style={{

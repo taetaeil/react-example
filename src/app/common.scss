@@ -242,4 +242,9 @@ $height-10: 32px; // input height
 // ===================================== Sidebar =====================================
 .sidebar {
   display: flex;
+  .MuiDrawer-root {
+    .MuiPaper-root {
+      visibility: visible !important;
+    }
+  }
 }
