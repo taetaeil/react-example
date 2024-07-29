@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <g id="checkbox_on" transform="translate(-800 -461)">
+    <rect id="select_box" data-name="select box" width="16" height="16" rx="3" transform="translate(800 461)" fill="#2668c9"/>
+    <g id="ico_check">
+      <rect id="Rectangle_20" data-name="Rectangle 20" width="12" height="12" transform="translate(802 463)" fill="none" opacity="0.2"/>
+      <path id="Path_16" data-name="Path 16" d="M806.5,472.061l-3.53-3.53,1.061-1.061,2.47,2.47,5.47-5.47,1.061,1.061Z" transform="translate(0 0.5)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

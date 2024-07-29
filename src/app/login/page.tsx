@@ -1,4 +1,4 @@
-import '../styles/common.scss' // css 파일
+import '../styles/login.scss' // css 파일
 
 import CmHeader from '../components/CmHeader' // header 컴포넌트
 import CmBasicInput from '../components/CmInput' // input 컴포넌트
@@ -32,7 +32,8 @@ export default function Login() {
             placeholder="비밀번호"
           ></CmBasicInput>
           <CmCheckbox label="로그인 상태 유지"></CmCheckbox>
-          <button type="button" className="btn__primary--full">
+          <p className="login__validation">존재하지 않는 아이디 입니다.</p>
+          <button type="button" className="btn__primary">
             로그인
           </button>
           <div className="login-box__btns">
@@ -40,7 +41,9 @@ export default function Login() {
             <button type="button">회원가입</button>
           </div>
         </div>
-        <p className="login-footer">COPYRIGHT abcdefghijk</p>
+        <p className="login-footer">
+          COPYRIGHT KONAN TECHNOLOGY INC. ALL RIGHTS RESERVED.
+        </p>
       </div>
     </>
   )

@@ -130,7 +130,7 @@ export default function CmHeader(props: { utiles?: React.ReactNode }) {
   return (
     <header className="header">
       <h1 className="header-logo">
-        <CmIcon name="logo" width="135" height="36" type="svg"></CmIcon>
+        <CmIcon name="logo" width="135" height="36"></CmIcon>
       </h1>
       <div className="header__btns">
         {props.utiles}

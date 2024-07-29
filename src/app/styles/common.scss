@@ -156,11 +156,6 @@ $header-h: 56px;
         no-repeat padding-box;
       border-color: #dc4807;
     }
-    // primary button / width full(login button)
-    &--full {
-      @extend .btn__primary;
-      width: 100%;
-    }
   }
   // line button
   &__line {
@@ -186,6 +181,35 @@ $header-h: 56px;
     }
   }
 }
+
+// ===================================== Checkbox =====================================
+.cm-checkbox {
+  margin-left: initial !important;
+  margin-right: initial !important;
+  .MuiCheckbox-root {
+    padding: 0;
+    margin-right: 8px;
+    & + .MuiTypography-root {
+      font-size: 13px !important;
+      color: $gray-150;
+      font-family: 'Noto Sans KR' !important;
+    }
+  }
+  .Mui-checked {
+    svg {
+      background: url('/icons/checkbox--checked.svg') no-repeat center;
+    }
+  }
+  svg {
+    width: 16px;
+    height: 16px;
+    background: url('/icons/checkbox--default.svg') no-repeat center;
+    path {
+      display: none;
+    }
+  }
+}
+
 // ===================================== Input =====================================
 
 .cm-input {
@@ -365,72 +389,5 @@ $header-h: 56px;
         white-space: nowrap;
       }
     }
-  }
-}
-// ===================================== Login =====================================
-.login {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  height: calc(100% - $header-h);
-  background: #f2f7fe;
-
-  &-box {
-    box-shadow: 0px 5px 10px #22262b26;
-
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    width: 350px;
-    padding: 50px 35px 70px;
-    margin-top: 80px;
-    background: $white;
-    border: 1px solid $gray-10;
-    border-radius: $radius-50;
-    &__title {
-      margin-bottom: 20px;
-      text-align: center;
-      font-weight: 600;
-      font-size: 20px;
-    }
-    &__btns {
-      display: flex;
-      gap: 12px;
-      margin-top: 10px;
-      button {
-        position: relative;
-        font-weight: 500;
-        font-size: 12px;
-        & + button {
-          &::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: -6px;
-            height: 12px;
-            width: 1px;
-            background: $gray-10;
-            transform: translateY(-50%);
-          }
-        }
-      }
-    }
-    .cm-input {
-      & + .cm-input {
-        margin-top: 8px;
-      }
-    }
-    .cm-checkbox {
-      width: 100%;
-      margin-bottom: 15px;
-      .css-ahj2mt-MuiTypography-root {
-        font-size: 12px;
-      }
-    }
-  }
-  &-footer {
-    margin-top: 12px;
-    color: $gray-50;
-    font-size: 12px;
   }
 }
