@@ -3,7 +3,7 @@
 import React, { ReactNode } from 'react'
 import { styled, Theme, CSSObject } from '@mui/material/styles'
 import MuiDrawer from '@mui/material/Drawer'
-import CmTree from './CmTree' // 트리메뉴
+import CmTree from './components/CmTree' // 트리메뉴
 
 const drawerWidth = 240
 

@@ -1,0 +1,436 @@
+//  ===================================== variables =====================================
+// color
+$gray-10: #d3d7de; // input basic border-color
+$gray-50: #99a1a8; // input placehodler
+$gray-100: #748399;
+$gray-150: #555759;
+$gray-500: #43464d;
+$gray-250: #22262b;
+
+$primary-10: #3d4454;
+$primary-20: #f88125;
+$primary-30: #ff9d24;
+
+$blue: #2668c9; // input focus border-color
+$error: #e84a51;
+$warning: #fcc347;
+$normal: #37ab3b;
+
+$white: #ffffff;
+
+// etc
+$radius-10: 3px; // button border-radius
+$radius-50: 4px; // input basic border-radius
+$transition: all 0.1s linear;
+$form-h: 36px; // input height
+$btn-h: 32px; // button height
+$header-h: 56px;
+
+// ===================================== Header =====================================
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: $header-h;
+  padding: 0 24px;
+  background: $primary-10;
+  color: $gray-50;
+
+  &__menu {
+    &--title {
+      border-bottom: 1px solid $primary-10;
+    }
+    &--error {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      margin: 0 6px;
+      background: $error;
+      border-radius: 50%;
+    }
+    &--warning {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      margin: 0 6px;
+      background: rgb(255, 204, 0);
+      border-radius: 50%;
+    }
+  }
+  &__btns {
+    display: flex;
+    align-items: center;
+    &--square {
+      // position: relative;
+      padding: 0 6px;
+      margin-right: 12px;
+      border-radius: $radius-50;
+      &:hover {
+        background: rgb(66, 63, 63);
+      }
+      // &::after {
+      //   content: '';
+      //   position: absolute;
+      //   top: 50%;
+      //   right: -6px;
+      //   height: 16px;
+      //   width: 1px;
+      //   background: $gray-10;
+      //   transform: translateY(-50%);
+      // }
+    }
+    &--circle {
+      position: relative;
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1px solid $gray-10;
+      background: rgb(66, 63, 63);
+      &:hover {
+        background: rgb(107, 103, 103);
+      }
+    }
+    &--badage {
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 8px;
+        height: 8px;
+        background: orange;
+        border-radius: 50%;
+      }
+    }
+    .btn__line {
+      span {
+        color: $blue;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+// ===================================== Button =====================================
+%btn {
+  height: $btn-h;
+  min-width: 74px;
+  padding: 0 24px;
+  border-radius: $radius-10;
+  box-sizing: border-box;
+  transition: $transition;
+  font-weight: 500;
+  border-width: 1px;
+  &:has(img) {
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    img {
+      margin-right: 8px;
+    }
+    span {
+      font-size: 13px;
+    }
+  }
+}
+.btn {
+  // primary button
+  &__primary {
+    @extend %btn;
+    background: transparent
+      linear-gradient(180deg, #fc9025 0%, #fc9025 20%, #f98024 100%) 0% 0%
+      no-repeat padding-box;
+    border-color: #e4721b;
+    color: $white;
+    &:hover {
+      background: transparent
+        linear-gradient(180deg, #fe8812 0%, #fe8812 20%, #f56505 100%) 0% 0%
+        no-repeat padding-box;
+      border-color: #e0600b;
+    }
+    &:active {
+      background: transparent
+        linear-gradient(180deg, #fe8812 0%, #fe8812 20%, #f56505 100%) 0% 0%
+        no-repeat padding-box;
+      border-color: #dc4807;
+    }
+    // primary button / width full(login button)
+    &--full {
+      @extend .btn__primary;
+      width: 100%;
+    }
+  }
+  // line button
+  &__line {
+    @extend %btn;
+    background: transparent
+      linear-gradient(180deg, #fafbfc 0%, #fafbfc 20%, #f2f4f7 100%) 0% 0%
+      no-repeat padding-box;
+    border-color: $gray-10;
+    color: #777d87;
+    &:hover {
+      background: transparent
+        linear-gradient(180deg, #deedfc 0%, #deedfc 20%, #ccdef6 100%) 0% 0%
+        no-repeat padding-box;
+      border-color: #93b9ea;
+      color: $blue;
+    }
+    &:active {
+      background: transparent
+        linear-gradient(180deg, #deedfc 0%, #deedfc 20%, #ccdef6 100%) 0% 0%
+        no-repeat padding-box;
+      border-color: #2668c9;
+      color: $blue;
+    }
+  }
+}
+// ===================================== Input =====================================
+
+.cm-input {
+  display: inline-block;
+  flex: 1 1 0%;
+  position: relative;
+  width: 100%;
+
+  // input 공통 스타일
+  input {
+    height: $form-h;
+    width: 100%;
+    padding: 0px 12px;
+    border: 1px solid $gray-10;
+    border-radius: $radius-50;
+    transition: $transition;
+    outline: 1px solid transparent;
+    &:focus {
+      border-color: $blue;
+      outline: 1px solid $blue;
+    }
+    &::placeholder {
+      color: $gray-50;
+    }
+  }
+
+  // 버튼이 있을 경우 적용되는 스타일
+  &__btn {
+    input {
+      padding-right: 42px;
+    }
+    button {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      width: 20px;
+      height: 100%;
+      transform: translateY(-50%);
+      &.cm-input__btn-reset {
+        opacity: 0.7;
+        transition: $transition;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  &--error {
+    input {
+      border-color: $error;
+      outline: 1px solid $error;
+    }
+  }
+
+  // input[type='number'] 일 경우
+  &-number {
+    flex: none;
+    width: 65px;
+    outline: 0;
+    input {
+      height: 24px;
+      padding-right: 30px;
+      transition: none;
+      font-size: 13px;
+      &:focus {
+        outline: 0;
+        & + .cm-input-number__btn {
+          button {
+            background: transparent
+              linear-gradient(180deg, #deedfc 0%, #deedfc 20%, #ccdef6 100%) 0%
+              0% no-repeat padding-box;
+            border-color: $blue;
+            svg {
+              path {
+                fill: $blue;
+              }
+            }
+          }
+        }
+      }
+    }
+    &__btn {
+      display: flex;
+      flex-flow: column;
+      position: absolute;
+      right: -1px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 13px;
+      button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 24px;
+        height: 12px;
+        background: transparent
+          linear-gradient(180deg, #fafbfc 0%, #fafbfc 20%, #f2f4f7 100%) 0% 0%
+          no-repeat padding-box;
+        border: 1px solid $gray-10;
+        // 증가 버튼
+        &:first-child {
+          border-radius: 0 $radius-50 0 0;
+          border-bottom: 0;
+        }
+        // 감소 버튼
+        &:last-child {
+          border-radius: 0 0 $radius-50 0;
+        }
+      }
+    }
+  }
+
+  // input[type="number"] spinner 제거 (Chrome, Safari, Edge, Opera)
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  // input[type="number"] spinner 제거 (Firefox)
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+}
+
+// ===================================== MuPopup =====================================
+.MuiDialog-container {
+  .MuiPaper-root {
+    width: 100%;
+    .MuiDialogTitle-root {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid $gray-10;
+    }
+    .MuiDialogContent-root {
+      padding: 20px;
+    }
+  }
+}
+// ===================================== Sidebar =====================================
+.sidebar {
+  display: flex;
+  &__wrap {
+    width: 100%;
+  }
+  .MuiDrawer-root {
+    .MuiPaper-root {
+      background: transparent;
+      border: 0;
+      .sidebar__trigger {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 10px;
+        right: 8px;
+        width: 26px;
+        height: 26px;
+        background: $white;
+        border: 1px solid $gray-10;
+        border-radius: $radius-50;
+      }
+      .sidebar__content {
+        height: 100%;
+        margin-right: 20px;
+        padding: 20px 15px;
+        background: $white;
+        border-right: 1px solid $gray-10;
+      }
+    }
+  }
+  .MuiRichTreeView-root {
+    .MuiTreeItem-root {
+      .MuiTreeItem-label {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+// ===================================== Login =====================================
+.login {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  height: calc(100% - $header-h);
+  background: #f2f7fe;
+
+  &-box {
+    box-shadow: 0px 5px 10px #22262b26;
+
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 350px;
+    padding: 50px 35px 70px;
+    margin-top: 80px;
+    background: $white;
+    border: 1px solid $gray-10;
+    border-radius: $radius-50;
+    &__title {
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 20px;
+    }
+    &__btns {
+      display: flex;
+      gap: 12px;
+      margin-top: 10px;
+      button {
+        position: relative;
+        font-weight: 500;
+        font-size: 12px;
+        & + button {
+          &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -6px;
+            height: 12px;
+            width: 1px;
+            background: $gray-10;
+            transform: translateY(-50%);
+          }
+        }
+      }
+    }
+    .cm-input {
+      & + .cm-input {
+        margin-top: 8px;
+      }
+    }
+    .cm-checkbox {
+      width: 100%;
+      margin-bottom: 15px;
+      .css-ahj2mt-MuiTypography-root {
+        font-size: 12px;
+      }
+    }
+  }
+  &-footer {
+    margin-top: 12px;
+    color: $gray-50;
+    font-size: 12px;
+  }
+}

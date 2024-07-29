@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import CmSidebar from './Sidebar' // header 컴포넌트
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,7 +17,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <CmSidebar contents={children}></CmSidebar>
+        {/* <CmSidebar contents={children}></CmSidebar> */}
+        {children}
       </body>
     </html>
   )
