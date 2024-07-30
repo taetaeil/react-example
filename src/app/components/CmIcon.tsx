@@ -4,6 +4,7 @@ export default function CmIcon(props: {
   type?: string
   width?: string
   height?: string
+  style?: string
 }) {
   const { name, alt, type = 'svg', width, height } = props
   return (

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="ico_notification" transform="translate(-1717 -18)">
+    <rect id="icon" width="20" height="20" transform="translate(1717 18)" fill="none" opacity="0.2"/>
+    <path id="Path_17" data-name="Path 17" d="M5-1364H9a2,2,0,0,1-2,2A2,2,0,0,1,5-1364Zm8-1H0v-1.5H1v-6a6,6,0,0,1,5.1-5.933v-.667a.9.9,0,0,1,.9-.9.9.9,0,0,1,.9.9v.667A6,6,0,0,1,13-1372.5v6h1v1.5Zm-1.3-1.5v-6a4.706,4.706,0,0,0-4.7-4.7,4.705,4.705,0,0,0-4.7,4.7v6Z" transform="translate(1720 1399)" fill="#e1e4eb"/>
+  </g>
+</svg>

@@ -15,7 +15,7 @@ export default function Login() {
         utiles={
           <button type="button" className="btn__line">
             <CmIcon name="download__line--266" width="16"></CmIcon>
-            <span>메뉴얼 다운로드</span>
+            <span>매뉴얼 다운로드</span>
           </button>
         }
       ></CmHeader>

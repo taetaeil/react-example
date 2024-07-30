@@ -1,13 +1,13 @@
 'use client'
 
-import * as React from 'react'
+import React, { useState } from 'react'
 import CmHeader from '../components/CmHeader' // header 컴포넌트
 import CmSidebar from '../components/CmSidebar' // sidebar 컴포넌트
 import CmMenu from '../components/CmMenu' // sidebar 컴포넌트
-
 import CmPopup from '../components/CmPopup' // 설정팝업
+import CmIcon from '../components/CmIcon' // icon 컴포넌트
+
 import Popover from '@mui/material/Popover'
-import Tooltip from '@mui/material/Tooltip'
 
 // --------------------------------------- Header ---------------------------------------
 const notiList = [
@@ -48,55 +48,37 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  // 새로고침(9분 50초전)
-  const [resetTrigger, setResetTrigger] = React.useState<HTMLElement | null>(
-    null
-  )
-
-  const handlePopoverOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setResetTrigger(event.currentTarget)
-  }
-
-  const handlePopoverClose = () => {
-    setResetTrigger(null)
-  }
-  const openReset = Boolean(resetTrigger)
-
-  // // 알림버튼
+  // 알림버튼
   const isNoti = true
 
   // 로그아웃버튼(김코난)
   const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null)
+  const [isClicked, setIsClicked] = useState(false)
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget)
+    setIsClicked(!isClicked)
   }
 
   const handleClose = () => {
     setAnchorEl(null)
+    setIsClicked(!isClicked)
   }
 
   const openLogout = Boolean(anchorEl)
   const id = openLogout ? 'simple-popover' : undefined
+
   return (
     <>
       <CmHeader
         utiles={
           <>
-            {/* =========================== 시간 =========================== */}
-            <Tooltip title="새로고침" placement="bottom-end">
-              <button
-                type="button"
-                aria-owns={openReset ? 'mouse-over-popover' : undefined}
-                aria-haspopup="true"
-                onMouseEnter={handlePopoverOpen}
-                onMouseLeave={handlePopoverClose}
-                className="header__btns--square"
-              >
-                9분 50초전
-              </button>
-            </Tooltip>
-
+            {/* =========================== 매뉴얼 다운로드 버튼 =========================== */}
+            <button type="button" className="btn__line">
+              <CmIcon name="download__line--266" width="16"></CmIcon>
+              <span>매뉴얼 다운로드</span>
+            </button>
+            <span className="divide-ver"></span>
             {/* =========================== 알람 =========================== */}
             <CmMenu
               options={notiList}
@@ -106,7 +88,7 @@ export default function RootLayout({
                     isNoti ? 'header__btns--badage' : ''
                   }`}
                 >
-                  <img src="" alt="알" />
+                  <CmIcon name="alram__line--e1e" width="20"></CmIcon>
                 </span>
               }
             ></CmMenu>
@@ -114,7 +96,11 @@ export default function RootLayout({
             {/* =========================== 설정 =========================== */}
             <CmPopup
               title="설정"
-              trigger={<span className="header__btns--circle">설</span>}
+              trigger={
+                <span className="header__btns--circle">
+                  <CmIcon name="setting__line--e1e" width="20"></CmIcon>
+                </span>
+              }
               contents={<div>내용</div>}
             ></CmPopup>
 
@@ -126,6 +112,11 @@ export default function RootLayout({
               onClick={handleClick}
             >
               김코난
+              {isClicked ? (
+                <CmIcon name="arrow-t__line--e1e" width="12"></CmIcon>
+              ) : (
+                <CmIcon name="arrow-b__line--e1e" width="12"></CmIcon>
+              )}
             </button>
             <Popover
               id={id}
@@ -136,6 +127,7 @@ export default function RootLayout({
                 vertical: 'bottom',
                 horizontal: 'left',
               }}
+              className="header__btns-logout"
             >
               <button type="button">로그아웃</button>
             </Popover>

@@ -16,9 +16,14 @@ export default function Home() {
       url: '/login',
     },
     {
-      title: '메인',
+      title: '메인 / 파일업로드',
       status: '작업 예정',
-      url: '/main',
+      url: '/file-upload',
+    },
+    {
+      title: '메인 / 대시보드',
+      status: '작업 예정',
+      url: '/dashboard',
     },
   ]
   return (
