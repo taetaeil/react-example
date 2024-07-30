@@ -1,5 +1,4 @@
 {
-  "homepage": "https://taetaeil.github.io/react-example/",
   "name": "react-example",
   "version": "0.1.0",
   "private": true,
@@ -7,16 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "lint": "next lint"
   },
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@mui/material": "^5.16.4",
     "@mui/x-tree-view": "^7.11.0",
-    "gh-pages": "^6.1.1",
     "next": "14.0.1",
     "node-sass": "^9.0.0",
     "react": "^18",
