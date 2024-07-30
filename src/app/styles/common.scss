@@ -223,6 +223,7 @@ $header-h: 56px;
     height: $form-h;
     width: 100%;
     padding: 0px 12px;
+    background: #f7f8fa;
     border: 1px solid $gray-10;
     border-radius: $radius-50;
     transition: $transition;
@@ -357,6 +358,8 @@ $header-h: 56px;
   }
   .MuiDrawer-root {
     .MuiPaper-root {
+      top: $header-h;
+      height: calc(100% - $header-h);
       background: transparent;
       border: 0;
       .sidebar__trigger {

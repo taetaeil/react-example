@@ -49,7 +49,7 @@ export default function Home() {
       </div>
       <h2
         style={{
-          marginTop: '16px',
+          marginTop: '32px',
           marginBottom: '16px',
           paddingBottom: '8px',
           borderBottom: '1px solid #dddddd',
@@ -92,6 +92,7 @@ export default function Home() {
 
       <h2
         style={{
+          marginTop: '32px',
           marginBottom: '16px',
           paddingBottom: '8px',
           borderBottom: '1px solid #dddddd',
@@ -192,6 +193,7 @@ export default function Home() {
 
       <h2
         style={{
+          marginTop: '32px',
           marginBottom: '16px',
           paddingBottom: '8px',
           borderBottom: '1px solid #dddddd',
@@ -199,7 +201,7 @@ export default function Home() {
           fontSize: '18px',
         }}
       >
-        Form
+        Form (작업중)
       </h2>
       <ul style={{ padding: '0 15px' }}>
         <li

@@ -4,6 +4,7 @@ import React, { ReactNode } from 'react'
 import { styled, Theme, CSSObject } from '@mui/material/styles'
 import MuiDrawer from '@mui/material/Drawer'
 import CmTree from './components/CmTree' // 트리메뉴
+import './styles/common.scss' // css 파일
 
 const drawerWidth = 240
 
