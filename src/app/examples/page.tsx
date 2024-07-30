@@ -6,47 +6,10 @@ import CmTab from '../Tap' // tab 컴포넌트
 import CmInput from '../components/CmInput' // input 컴포넌트
 import CmNumberInput from '../components/CmNumberInput' // input 컴포넌트
 import CmCheckbox from '../components/CmCheckbox' // checkbox 컴포넌트
+import CmSwitch from '../components/CmSwitch' // Switch 컴포넌트
+import CmSelect from '../components/CmSelect' // Select 컴포넌트
 
-import MenuItem from '@mui/material/MenuItem'
-import FormControl from '@mui/material/FormControl'
-import Select from '@mui/material/Select'
-import FormControlLabel from '@mui/material/FormControlLabel'
-import Switch from '@mui/material/Switch'
 import Tooltip from '@mui/material/Tooltip'
-
-// --------------------------------------- Switch ---------------------------------------
-export function CmSwitch(props: {
-  disabled?: boolean
-  label?: string
-  required?: boolean
-}) {
-  return (
-    <FormControlLabel
-      required={props.required}
-      disabled={props.disabled}
-      control={<Switch />}
-      label={props.label}
-    />
-  )
-}
-
-// --------------------------------------- Select ---------------------------------------
-export function CmSelect() {
-  return (
-    <FormControl>
-      <Select value="apple">
-        <MenuItem value="apple">apple</MenuItem>
-        <MenuItem value="banana">banana</MenuItem>
-        <MenuItem value="melon">melon</MenuItem>
-      </Select>
-    </FormControl>
-  )
-}
-
-// --------------------------------------- Accordion ---------------------------------------
-export function CmAccordion() {
-  return <div>아코디언</div>
-}
 
 // ====================================== Page ======================================
 export default function Home() {
@@ -287,7 +250,7 @@ export default function Home() {
         >
           <p style={{ width: '210px', color: '#444444' }}>Accordion</p>
           {/* --------------------------------------- Accordion --------------------------------------- */}
-          <CmAccordion></CmAccordion>
+          {/* <CmAccordion></CmAccordion> */}
         </li>
         <li
           style={{
@@ -311,8 +274,8 @@ export default function Home() {
         >
           <p style={{ width: '210px', color: '#444444' }}>Tooltip</p>
           {/* --------------------------------------- Tooltip --------------------------------------- */}
-          <Tooltip title="힝 속았지?">
-            <div>나는야 버튼!</div>
+          <Tooltip title="툴팁입니다.">
+            <div>마우스를 올려주세요</div>
           </Tooltip>
         </li>
       </ul>
