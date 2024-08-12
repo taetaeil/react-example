@@ -1,7 +1,6 @@
 'use client'
 import React, { useState } from 'react'
 
-import '../styles/common.scss' // css 파일
 import CmInput from '../components/CmInput' // input 컴포넌트
 import CmNumberInput from '../components/CmNumberInput' // input 컴포넌트
 import CmCheckbox from '../components/CmCheckbox' // checkbox 컴포넌트

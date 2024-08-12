@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useState, useRef } from 'react'
-import '../styles/common.scss' // css 파일
 
 interface CmNumberInputProps {
   value: number // input의 값

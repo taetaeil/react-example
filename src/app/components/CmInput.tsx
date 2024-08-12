@@ -1,7 +1,6 @@
 'use client'
 import React, { useState } from 'react'
 import CmIcon from './CmIcon' // icon 컴포넌트
-import '../styles/common.scss' // css 파일
 
 interface CmBasicInputProps {
   isReset?: boolean // 초기화 버튼

@@ -1,6 +1,5 @@
 import * as React from 'react'
 import Menu from '@mui/material/Menu'
-import '../styles/common.scss' // css 파일
 
 // --------------------------------------- Menu ---------------------------------------
 export default function CmMenu(props: {

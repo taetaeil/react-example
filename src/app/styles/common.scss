@@ -160,7 +160,7 @@
     border: 1px solid $gray-10;
     border-radius: $radius-50;
     transition: $transition;
-    color: $gray-150;
+    color: $gray-250;
     outline: 1px solid transparent;
     &:focus {
       border-color: $blue;
@@ -172,6 +172,10 @@
     &:read-only {
       color: $blue;
       cursor: default;
+      &:focus {
+        border: 1px solid $gray-10;
+        outline: 1px solid transparent;
+      }
     }
   }
 

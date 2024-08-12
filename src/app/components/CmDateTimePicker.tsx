@@ -6,7 +6,6 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import dayjs, { Dayjs } from 'dayjs'
 import 'dayjs/locale/ko' // 한국어 로케일을 임포트
-import '../styles/common.scss' // css 파일
 
 dayjs.locale('ko') // 한국어 로케일 설정
 
