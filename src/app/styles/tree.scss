@@ -1,0 +1,92 @@
+@import './variables.scss';
+
+.MuiRichTreeView-root {
+  .MuiTreeItem-root {
+    .MuiTreeItem-content {
+      height: 36px;
+      padding: 0 20px;
+      border-radius: 0;
+
+      &:hover {
+        background-color: #f0f2f5;
+      }
+      &.Mui-selected {
+        background-color: #ffecde;
+      }
+      .MuiTreeItem-iconContainer {
+        width: 12px;
+        height: 12px;
+        // 하위 뎁스가 없는 경우
+        background: url('/icons/dash__line--434.svg') no-repeat 0 0 / 13px;
+
+        .MuiSvgIcon-root {
+          display: none;
+        }
+        // 하위 뎁스가 있는 경우
+        &:has(svg) {
+          transition: $transition;
+          background: url('/icons/arrow-r__triangle--434.svg') no-repeat 0 0 /
+            12px;
+          font-size: initial;
+          transform: rotate(0);
+        }
+      }
+      &.Mui-expanded {
+        .MuiTreeItem-iconContainer {
+          &:has(svg) {
+            transform: rotate(90deg);
+          }
+        }
+      }
+      .MuiTreeItem-label {
+        font-size: 13px;
+        font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', Sans-serif;
+        color: $gray-500;
+        .cm-tree__count {
+          margin-left: 6px;
+          color: $gray-100;
+        }
+        .cm-tree__title {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          max-width: 100%;
+        }
+      }
+    }
+  }
+  .css-1lusc8a-MuiCollapse-root-MuiTreeItem2-groupTransition {
+    padding-left: 0;
+    .MuiCollapse-wrapper {
+      .MuiCollapse-wrapperInner {
+        .MuiTreeItem-root {
+          .MuiTreeItem-content {
+            padding-left: 29px;
+            & + .MuiCollapse-root {
+              .MuiCollapse-wrapper {
+                .MuiCollapse-wrapperInner {
+                  .MuiTreeItem-root {
+                    .MuiTreeItem-content {
+                      padding-left: 38px;
+                      & + .MuiCollapse-root {
+                        .MuiCollapse-wrapper {
+                          .MuiCollapse-wrapperInner {
+                            .MuiTreeItem-root {
+                              .MuiTreeItem-content {
+                                padding-left: 47px;
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

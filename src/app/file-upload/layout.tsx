@@ -3,8 +3,9 @@
 import React, { useState } from 'react'
 import CmHeader from '../components/CmHeader' // header 컴포넌트
 import CmSidebar from '../components/CmSidebar' // sidebar 컴포넌트
-import CmMenu from '../components/CmMenu' // sidebar 컴포넌트
-import CmPopup from '../components/CmPopup' // 설정팝업
+import CmMenu from '../components/CmMenu'
+import MenuItem from '@mui/material/MenuItem'
+import SettingP from '../components/pages/setting-p' // 설정팝업
 import CmIcon from '../components/CmIcon' // icon 컴포넌트
 
 import Popover from '@mui/material/Popover'
@@ -79,9 +80,42 @@ export default function RootLayout({
               <span>매뉴얼 다운로드</span>
             </button>
             <span className="divide-ver"></span>
+
             {/* =========================== 알람 =========================== */}
             <CmMenu
-              options={notiList}
+              className="header__alram"
+              title={
+                <p className="header__alram-title">
+                  알람
+                  <span className="header__alram--badage">5</span>
+                </p>
+              }
+              contents={notiList.map((option) => (
+                <MenuItem
+                  key={option.name}
+                  selected={option.name === 'AS1-MO-0101'}
+                  onClick={handleClose}
+                >
+                  <div className="header__alram-info">
+                    <span
+                      className={`${
+                        option.status === 'error'
+                          ? 'header__alram--error'
+                          : 'header__alram--warning'
+                      }`}
+                    ></span>
+                    <span className="header__alram-list--title">
+                      {option.name}
+                    </span>
+                    <span className="header__alram-list--type">
+                      {option.type}
+                    </span>
+                  </div>
+                  <span className="header__alram-list--time">
+                    {option.time}
+                  </span>
+                </MenuItem>
+              ))}
               trigger={
                 <span
                   className={`header__btns--circle ${
@@ -94,15 +128,13 @@ export default function RootLayout({
             ></CmMenu>
 
             {/* =========================== 설정 =========================== */}
-            <CmPopup
-              title="설정"
+            <SettingP
               trigger={
                 <span className="header__btns--circle">
                   <CmIcon name="setting__line--e1e" width="20"></CmIcon>
                 </span>
               }
-              contents={<div>내용</div>}
-            ></CmPopup>
+            ></SettingP>
 
             {/* =========================== 김코난 =========================== */}
             <button
@@ -111,7 +143,7 @@ export default function RootLayout({
               aria-describedby={id}
               onClick={handleClick}
             >
-              김코난
+              <span>김코난</span>
               {isClicked ? (
                 <CmIcon name="arrow-t__line--e1e" width="12"></CmIcon>
               ) : (
@@ -129,7 +161,9 @@ export default function RootLayout({
               }}
               className="header__btns-logout"
             >
+              <button type="button">비밀번호 변경</button>
               <button type="button">로그아웃</button>
+              <p>버전: 1.0.0</p>
             </Popover>
           </>
         }

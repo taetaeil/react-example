@@ -1,0 +1,75 @@
+@import './variables.scss';
+
+.cm-tab-ver {
+  display: flex;
+  height: 100%;
+  // 탭 메뉴
+  > .MuiTabs-root {
+    width: 160px;
+    padding: 10px;
+    background: #f0f2f5;
+    border-radius: $radius-50;
+    border: 0;
+    .MuiTabs-scroller {
+      .MuiTabs-flexContainer {
+        gap: 8px;
+        .MuiButtonBase-root {
+          display: inline-block;
+          min-height: 32px;
+          max-width: initial;
+          min-width: initial;
+          line-height: 32px;
+          padding: 0 10px;
+          border-radius: $radius-50;
+          text-align: left;
+          font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', Sans-serif;
+          font-size: 13px;
+          font-weight: 400;
+          color: #43464d;
+          &.Mui-selected {
+            background: #e1e5eb;
+            font-weight: 500;
+          }
+        }
+      }
+      .MuiTabs-indicator {
+        display: none;
+      }
+    }
+  }
+  // 탭 컨텐츠
+  &__cont {
+    flex: 1;
+    padding: 0 20px 17px;
+  }
+}
+
+.cm-tab-hor {
+  > .MuiTabs-root {
+    min-height: 36px;
+  }
+  .MuiTabs-scroller {
+    .MuiTabs-flexContainer {
+      .MuiButtonBase-root {
+        min-height: 36px;
+        min-width: 56px;
+        padding: 0;
+        border-bottom: 1px solid #d8dde3;
+        font-size: 13px;
+        font-weight: 400;
+        font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', Sans-serif;
+        color: #7b828c;
+        &.Mui-selected {
+          font-weight: 500;
+          color: $gray-150;
+        }
+      }
+    }
+    .MuiTabs-indicator {
+      background: $primary-20;
+    }
+  }
+  &__cont {
+    padding: 13px 0;
+  }
+}

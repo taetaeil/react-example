@@ -1,18 +1,7 @@
-import FormControlLabel from '@mui/material/FormControlLabel'
 import Switch from '@mui/material/Switch'
+import '../styles/common.scss' // css 파일
 
 // --------------------------------------- Switch ---------------------------------------
-export default function CmSwitch(props: {
-  disabled?: boolean
-  label?: string
-  required?: boolean
-}) {
-  return (
-    <FormControlLabel
-      required={props.required}
-      disabled={props.disabled}
-      control={<Switch />}
-      label={props.label}
-    />
-  )
+export default function CmSwitch(props: {}) {
+  return <Switch className="cm-switch" />
 }

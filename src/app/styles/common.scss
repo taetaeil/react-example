@@ -1,140 +1,5 @@
 @import './variables.scss';
 
-// ===================================== Header =====================================
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: $header-h;
-  padding: 0 24px;
-  background: $primary-10;
-  color: $gray-50;
-
-  &__menu {
-    &--title {
-      border-bottom: 1px solid $primary-10;
-    }
-    &--error {
-      display: inline-block;
-      width: 6px;
-      height: 6px;
-      margin: 0 6px;
-      background: $error;
-      border-radius: 50%;
-    }
-    &--warning {
-      display: inline-block;
-      width: 6px;
-      height: 6px;
-      margin: 0 6px;
-      background: rgb(255, 204, 0);
-      border-radius: 50%;
-    }
-  }
-  &__btns {
-    display: flex;
-    align-items: center;
-    &-logout {
-      &.MuiPopover-root {
-        .MuiPaper-root {
-          display: flex;
-          align-items: center;
-          height: 40px;
-          width: 120px;
-          padding: 5px 0;
-          margin-top: 22px;
-          margin-left: -7px;
-          border-radius: 5px;
-          border: 1px solid #e6e8eb;
-          box-shadow: 0px 4px 8px #22262b26;
-          color: $gray-250;
-          font-size: 13px;
-          button {
-            width: 100%;
-            height: 100%;
-            padding: 0 16px;
-            background: $white url('/icons/logout--default.svg') no-repeat
-              center right 12px;
-            text-align: left;
-            &:hover {
-              background-color: #f0f2f5;
-            }
-            &:active {
-              background: #ffecde url('/icons/logout--active.svg') no-repeat
-                center right 12px;
-              color: $primary-20;
-            }
-          }
-        }
-      }
-    }
-    &--square {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 30px;
-      line-height: 30px;
-      padding: 0 12px;
-      background: #515d7866;
-      border: 1px solid #e1e4eb26;
-      border-radius: $radius-10;
-      color: #e1e4eb;
-      font-size: 12px;
-
-      &:hover {
-        background: #515d78;
-      }
-      img {
-        margin-left: 4px;
-      }
-    }
-    &--circle {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 30px;
-      height: 30px;
-      margin-right: 12px;
-      border-radius: 50%;
-      border: 1px solid #e1e4eb26;
-      background: #515d7880;
-      &:hover {
-        background: #515d78;
-      }
-    }
-    &--badage {
-      &:after {
-        content: '';
-        position: absolute;
-        top: -2px;
-        right: -1px;
-        width: 8px;
-        height: 8px;
-        background: $primary-30;
-        border-radius: 50%;
-      }
-    }
-    .btn__line {
-      height: 30px;
-      line-height: 30px;
-      span {
-        color: $blue;
-        font-weight: 500;
-      }
-    }
-  }
-  .divide-ver {
-    display: inline-block;
-    height: 14px;
-    width: 1px;
-    margin: 0 24px;
-    background: #9ea6b8;
-    opacity: 0.5;
-  }
-}
-
 // ===================================== Button =====================================
 %btn {
   height: $btn-h;
@@ -202,6 +67,53 @@
       color: $blue;
     }
   }
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    background: $white;
+    border-radius: $radius-10;
+    border: 1px solid $gray-10;
+    transition: $transition;
+    &:hover {
+      background: #f2f5fa;
+      border: 1px solid #a3b3cc;
+      g {
+        opacity: 1;
+      }
+    }
+    &:active {
+      background: #ebf1fa;
+      border: 1px solid #6d8fc2;
+      svg {
+        path {
+          fill: #2668c9;
+        }
+      }
+    }
+    &--active {
+      background: #ebf1fa;
+      border: 1px solid #6d8fc2;
+      svg {
+        path {
+          fill: #2668c9;
+        }
+      }
+    }
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      &:hover {
+        border: 1px solid $gray-10;
+        background: $white;
+        g {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
 }
 
 // ===================================== Checkbox =====================================
@@ -233,7 +145,6 @@
 }
 
 // ===================================== Input =====================================
-
 .cm-input {
   display: inline-block;
   flex: 1 1 0%;
@@ -245,10 +156,11 @@
     height: $form-h;
     width: 100%;
     padding: 0px 12px;
-    background: #f7f8fa;
+    background: $white;
     border: 1px solid $gray-10;
     border-radius: $radius-50;
     transition: $transition;
+    color: $gray-150;
     outline: 1px solid transparent;
     &:focus {
       border-color: $blue;
@@ -256,6 +168,10 @@
     }
     &::placeholder {
       color: $gray-50;
+    }
+    &:read-only {
+      color: $blue;
+      cursor: default;
     }
   }
 
@@ -280,6 +196,11 @@
       }
     }
   }
+  &--filled {
+    input {
+      background: #f7f8fa;
+    }
+  }
   &--error {
     input {
       border-color: $error;
@@ -289,6 +210,8 @@
 
   // input[type='number'] 일 경우
   &-number {
+    display: flex;
+    align-items: center;
     flex: none;
     width: 65px;
     outline: 0;
@@ -372,75 +295,17 @@
     }
   }
 }
-// ===================================== Sidebar =====================================
-.sidebar {
-  display: flex;
-  height: calc(100% - $header-h);
-  padding: 30px 0;
-  background: #f5f6f7;
-  &__wrap {
-    width: 100%;
-  }
-  .MuiDrawer-root {
-    .MuiPaper-root {
-      top: $header-h;
-      height: calc(100% - $header-h);
-      background: transparent;
-      border: 0;
-      .sidebar__trigger {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        top: 10px;
-        right: 8px;
-        width: 26px;
-        height: 26px;
-        background: $white;
-        border: 1px solid $gray-10;
-        border-radius: $radius-50;
-      }
-      .sidebar__content {
-        height: 100%;
-        margin-right: 20px;
-        padding: 20px 15px;
-        background: $white;
-        border-right: 1px solid $gray-10;
-      }
-    }
-  }
-  .MuiRichTreeView-root {
-    .MuiTreeItem-root {
-      .MuiTreeItem-label {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-      }
-    }
-  }
-}
 
 // ===================================== Tooltip =====================================
-.tooltip {
-  display: flex;
-  align-items: center;
-  padding: 5px 12px;
-  border: 1px solid transparent;
-  border-radius: $radius-10;
-  color: #9ea6b8;
-  img {
-    margin-right: 4px;
-  }
-  &:hover {
-    background: #515d7866;
-    border: 1px solid #e1e4eb26;
-  }
-}
 .MuiPopper-root {
   .MuiTooltip-tooltip {
-    height: 26px;
-    line-height: 26px;
-    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    min-height: 26px;
+    line-height: 16px;
+    max-width: 195px;
+    padding: 5px 12px;
     margin-top: 31px !important;
     margin-left: 0px !important;
     background: #86a8db;
@@ -449,5 +314,376 @@
     box-shadow: 0px 2px 4px #22262b26;
     font-size: 11px;
     font-weight: 400;
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', Sans-serif;
+  }
+}
+
+// ===================================== form =====================================
+.form {
+  display: flex;
+  align-items: center;
+  &__label {
+    display: flex;
+    align-items: center;
+    min-width: 156px;
+    font-size: 13px;
+    font-weight: 500;
+    color: $gray-150;
+    .tooltip {
+      margin-left: 4px;
+    }
+  }
+  & + .form {
+    margin-top: 18px;
+  }
+}
+
+// ===================================== switch =====================================
+.cm-switch {
+  width: 25px;
+  height: 14px;
+  padding: 0;
+  .MuiButtonBase-root {
+    padding: 2px 0 0 2px;
+    &.Mui-checked {
+      & + .MuiSwitch-track {
+        background: $blue;
+        opacity: 1;
+      }
+      .MuiSwitch-input {
+        left: -21px;
+      }
+      .MuiSwitch-thumb {
+        transform: translateX(-10px);
+      }
+    }
+  }
+  .MuiSwitch-input {
+    width: 25px;
+    height: 14px;
+    left: 0;
+  }
+  .MuiSwitch-thumb {
+    width: 10px;
+    height: 10px;
+    background: transparent
+      linear-gradient(180deg, #fafbfc 0%, #fafbfc 20%, #f2f4f7 100%) 0% 0%
+      no-repeat padding-box;
+    box-shadow: 0px 2px 4px #22262b33;
+  }
+  .MuiSwitch-track {
+    width: 25px;
+    height: 14px;
+    background: #d3d7de;
+    opacity: 1;
+  }
+}
+
+// ===================================== datepicker =====================================
+.cm-datapicker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: $gray-150;
+
+  .MuiFormControl-root {
+    background: $white;
+    // background: #f7f8fa;
+    .MuiInputBase-root {
+      padding-right: 0;
+      border-radius: $radius-10;
+      font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', Sans-serif;
+      font-size: 13px;
+      .MuiOutlinedInput-notchedOutline {
+        border-color: transparent;
+        border-collapse: collapse;
+      }
+
+      // 인풋
+      .MuiInputBase-input {
+        flex: 1 1 0%;
+        height: 30px;
+        width: 181px;
+        padding: 0 10px;
+        background: #f7f8fa;
+        border: 1px solid #d3d7de;
+        border-right: 0;
+        box-sizing: border-box;
+        border-radius: 3px 0px 0px 3px;
+        color: $gray-150;
+        &:placeholder-shown {
+          background: $white;
+          & + .MuiInputAdornment-root {
+            .MuiButtonBase-root {
+              svg {
+                background: url('/icons/calendar--default.svg') no-repeat center;
+              }
+            }
+          }
+        }
+      }
+      // 버튼
+      .MuiInputAdornment-root {
+        padding: 0;
+        width: 30px;
+        height: 30px;
+        max-height: initial;
+        margin-left: 0;
+        background: transparent
+          linear-gradient(180deg, #fafbfc 0%, #fafbfc 20%, #f2f4f7 100%) 0% 0%
+          no-repeat padding-box;
+        border: 1px solid #d3d7de;
+        border-radius: 0px 3px 3px 0px;
+        box-sizing: border-box;
+        .MuiButtonBase-root {
+          width: 30px;
+          height: 30px;
+          padding: 0;
+          border-radius: 0px 3px 3px 0px;
+          svg {
+            background: transparent
+              linear-gradient(180deg, #deedfc 0%, #deedfc 20%, #ccdef6 100%) 0%
+              0% no-repeat padding-box;
+            background: url('/icons/calendar--selected.svg') no-repeat center;
+            path {
+              display: none;
+            }
+          }
+          &:hover {
+            background: transparent
+              linear-gradient(180deg, #deedfc 0%, #deedfc 20%, #ccdef6 100%) 0%
+              0% no-repeat padding-box;
+            border: 1px solid #93b9ea;
+          }
+        }
+      }
+
+      // 인풋에 포커스 됐을 경우
+      &.Mui-focused {
+        .MuiOutlinedInput-notchedOutline {
+          border-color: transparent;
+          border-width: 1px;
+        }
+        .MuiInputBase-input {
+          border-color: $blue;
+        }
+        .MuiInputAdornment-root {
+          background: transparent
+            linear-gradient(180deg, #deedfc 0%, #deedfc 20%, #ccdef6 100%) 0% 0%
+            no-repeat padding-box;
+          border: 1px solid #2668c9;
+          .MuiButtonBase-root {
+            svg {
+              background: url('/icons/calendar--active.svg') no-repeat center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.MuiPickersPopper-root {
+  .MuiPickersPopper-paper {
+    box-shadow: 0px 4px 8px #22262b26;
+    border: 1px solid #e6e8eb;
+    border-radius: $radius-50;
+    .cm-datapicker__btn {
+      position: absolute;
+      z-index: 1;
+      width: 20px;
+      height: 20px;
+      background: $white;
+      border: 1px solid #d3d7de;
+      border-radius: 3px;
+      &:hover {
+        background: #f2f5fa;
+        border: 1px solid #a3b3cc;
+      }
+      &:nth-child(1) {
+        top: 23px;
+        left: 13px;
+        transform: translateY(-50%);
+      }
+      &:nth-child(2) {
+        top: 23px;
+        left: 184px;
+        transform: translateY(-50%);
+      }
+    }
+    .MuiPickersLayout-root {
+      // 컨텐츠
+      .MuiPickersLayout-contentWrapper {
+        hr {
+          display: none;
+        }
+        // 캘린더
+        .MuiDateCalendar-root {
+          width: 216px;
+          min-height: 212px;
+          max-height: 242px;
+          height: fit-content;
+          // 헤더
+          .MuiPickersCalendarHeader-root {
+            position: relative;
+            min-height: 19px;
+            max-height: 19px;
+            margin-bottom: 9px;
+            // 연도, 월 라벨
+            .MuiPickersCalendarHeader-labelContainer {
+              position: absolute;
+              left: 50%;
+              transform: translateX(-50%);
+              color: $gray-150;
+              .MuiButtonBase-root {
+                display: none;
+              }
+              .css-dplwbx-MuiPickersCalendarHeader-label {
+                margin-right: 0;
+              }
+            }
+            // 버튼
+            .MuiPickersArrowSwitcher-root {
+              .MuiIconButton-edgeEnd {
+                position: absolute;
+                top: 50%;
+                left: 38px;
+                width: 20px;
+                height: 20px;
+                padding: 0;
+                border: 1px solid #d3d7de;
+                border-radius: $radius-10;
+                transform: translateY(-50%);
+                svg {
+                  background: url('/icons/arrow-l__line--658.svg') no-repeat
+                    center;
+                  path {
+                    display: none;
+                  }
+                }
+                &:hover {
+                  background: #f2f5fa;
+                  border: 1px solid #a3b3cc;
+                }
+              }
+              .MuiIconButton-edgeStart {
+                position: absolute;
+                top: 50%;
+                right: 38px;
+                width: 20px;
+                height: 20px;
+                padding: 0;
+                border: 1px solid #d3d7de;
+                border-radius: $radius-10;
+                transform: translateY(-50%);
+                svg {
+                  background: url('/icons/arrow-r__line--658.svg') no-repeat
+                    center;
+                  path {
+                    display: none;
+                  }
+                }
+                &:hover {
+                  background: #f2f5fa;
+                  border: 1px solid #a3b3cc;
+                }
+              }
+            }
+          }
+          // 날짜
+          .MuiPickersFadeTransitionGroup-root {
+            .MuiDayCalendar-header {
+              .MuiDayCalendar-weekDayLabel {
+                width: 24px;
+                height: 17px;
+                color: #7b828c;
+                font-size: 12px;
+                font-weight: 500;
+                font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', Sans-serif;
+              }
+            }
+            .MuiPickersSlideTransition-root {
+              .MuiDayCalendar-monthContainer {
+                .MuiDayCalendar-weekContainer {
+                  margin-top: 7px;
+                  &:first-child {
+                    margin-top: 6px;
+                  }
+                  .MuiPickersDay-root {
+                    width: 24px;
+                    height: 24px;
+                    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo',
+                      Sans-serif;
+                    font-size: 13px;
+                    color: $gray-150;
+                    &.css-23p0if-MuiButtonBase-root-MuiPickersDay-root {
+                      border-radius: $radius-10;
+                      &:not(.Mui-selected) {
+                        border: 1px solid $gray-10;
+                        background: $white;
+                      }
+                      &.Mui-selected {
+                        color: $white;
+                      }
+                    }
+                    &.css-1wy8uaa-MuiButtonBase-root-MuiPickersDay-root {
+                      border-radius: $radius-10;
+                      &.Mui-selected {
+                        color: $white;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .css-1t0788u-MuiPickersSlideTransition-root-MuiDayCalendar-slideTransition {
+            overflow: hidden;
+            min-height: initial;
+            max-height: 210px;
+            > * {
+              position: initial;
+            }
+          }
+        }
+        // 분 선택
+        .MuiMultiSectionDigitalClock-root {
+          height: 212px;
+          border-left: 1px solid #e6e8eb;
+          .MuiMultiSectionDigitalClockSection-root {
+            width: 120px;
+            .MuiMenuItem-root {
+              width: 100%;
+              height: 30px;
+              justify-content: flex-start;
+              padding: 0 10px;
+              margin: 0;
+              font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', Sans-serif;
+              font-size: 13px;
+              color: $gray-150;
+              &.Mui-selected {
+                background: #f0f6fc;
+              }
+              &:hover {
+                background: #f0f6fc;
+              }
+            }
+          }
+        }
+      }
+      // 풋터
+      .MuiDialogActions-root {
+        .MuiButtonBase-root {
+          &:nth-child(1) {
+            @extend .btn__line;
+            border: 1px solid #d3d7de;
+          }
+          &:nth-child(2) {
+            @extend .btn__primary;
+            border: 1px solid #e4721b;
+          }
+        }
+      }
+    }
   }
 }

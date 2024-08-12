@@ -6,24 +6,44 @@ import './styles/common.scss' // css 파일
 export default function Home() {
   const pageList = [
     {
-      title: '예제',
-      status: '작업 중',
+      title: '공통 컴포넌트',
+      status: '작업 완료',
       url: '/examples',
     },
     {
       title: '로그인',
-      status: '작업 중',
+      status: '작업 완료',
       url: '/login',
     },
     {
       title: '메인 / 파일업로드',
-      status: '작업 예정',
+      status: '작업 완료',
       url: '/file-upload',
     },
     {
       title: '메인 / 대시보드',
-      status: '작업 예정',
+      status: '작업 완료',
       url: '/dashboard',
+    },
+    {
+      title: '메인 / 상세',
+      status: '작업 완료',
+      url: '/detail',
+    },
+    {
+      title: '메인 / 상세_데이터 시각화',
+      status: '작업 완료',
+      url: '/visualization',
+    },
+    {
+      title: '메인 / 대시보드 / 설정팝업(헤더에 설정버튼 클릭)',
+      status: '작업 완료',
+      url: '/dashboard',
+    },
+    {
+      title: '메인 / 데이터 비교',
+      status: '작업 완료',
+      url: '/compare-data',
     },
   ]
   return (

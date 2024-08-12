@@ -1,54 +1,54 @@
 @font-face {
   font-family: 'NotoSansKR';
-  src: url('/fonts/NotoSansKR-Thin.ttf') format('ttf');
+  src: url('/fonts/NotoSansKR-100.woff2') format('woff2');
   font-weight: 100;
   font-display: swap;
 }
 @font-face {
   font-family: 'NotoSansKR';
-  src: url('/fonts/NotoSansKR-ExtraLight.ttf') format('ttf');
+  src: url('/fonts/NotoSansKR-200.woff2') format('woff2');
   font-weight: 200;
   font-display: swap;
 }
 @font-face {
   font-family: 'NotoSansKR';
-  src: url('/fonts/NotoSansKR-Light.ttf') format('ttf');
+  src: url('/fonts/NotoSansKR-300.woff2') format('woff2');
   font-weight: 300;
   font-display: swap;
 }
 @font-face {
   font-family: 'NotoSansKR';
-  src: url('/fonts/NotoSansKR-Regular.ttf') format('ttf');
+  src: url('/fonts/NotoSansKR-400.woff2') format('woff2');
   font-weight: 400;
   font-display: swap;
 }
 @font-face {
   font-family: 'NotoSansKR';
-  src: url('/fonts/NotoSansKR-Medium.ttf') format('ttf');
+  src: url('/fonts/NotoSansKR-500.woff2') format('woff2');
   font-weight: 500;
   font-display: swap;
 }
 @font-face {
   font-family: 'NotoSansKR';
-  src: url('/fonts/NotoSansKR-SemiBold.ttf') format('ttf');
+  src: url('/fonts/NotoSansKR-600.woff2') format('woff2');
   font-weight: 600;
   font-display: swap;
 }
 @font-face {
   font-family: 'NotoSansKR';
-  src: url('/fonts/NotoSansKR-Bold.ttf') format('ttf');
+  src: url('/fonts/NotoSansKR-700.woff2') format('woff2');
   font-weight: 700;
   font-display: swap;
 }
 @font-face {
   font-family: 'NotoSansKR';
-  src: url('/fonts/NotoSansKR-ExtraBold.ttf') format('ttf');
+  src: url('/fonts/NotoSansKR-800.woff2') format('woff2');
   font-weight: 800;
   font-display: swap;
 }
 @font-face {
   font-family: 'NotoSansKR';
-  src: url('/fonts/NotoSansKR-Black.ttf') format('ttf');
+  src: url('/fonts/NotoSansKR-900.woff2') format('woff2');
   font-weight: 900;
   font-display: swap;
 }
@@ -60,6 +60,8 @@
   border-width: 0; /* 2 */
   border-style: solid; /* 2 */
   font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', Sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ::before,
@@ -219,7 +221,7 @@ button,
 }
 
 :disabled {
-  cursor: not-allow;
+  cursor: not-allowed;
 }
 
 img,
@@ -243,6 +245,10 @@ video {
 [hidden] {
   display: none;
 }
+
+em {
+  font-style: normal;
+}
 /* ============= ScrollBar ============= */
 * {
   &::-webkit-scrollbar {
@@ -253,13 +259,15 @@ video {
   &::-webkit-scrollbar-thumb {
     border: 7px solid transparent;
     background-clip: padding-box;
-    background-color: gray;
+    background-color: #43464d66;
     border-radius: 12px;
   }
 }
 
 html,
 body {
+  min-width: 1680px;
   height: 100%;
+  background: #f5f6f7;
   font-size: 14px;
 }

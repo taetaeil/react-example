@@ -13,7 +13,9 @@
     display: flex;
     flex-flow: column;
     align-items: center;
+    position: relative;
     width: 416px;
+    height: 512px;
     padding: 69px 48px 90px;
     margin-top: 104px;
     background: $white;
@@ -22,6 +24,7 @@
     box-shadow: 0px 5px 10px #22262b26;
     &__title {
       margin-bottom: 30px;
+      line-height: 35px;
       text-align: center;
       font-weight: 500;
       font-size: 24px;
@@ -36,7 +39,7 @@
     &__btns {
       display: flex;
       gap: 32px;
-      margin-top: 24px;
+      margin-top: 22px;
       button {
         position: relative;
         color: $gray-150;
@@ -63,16 +66,17 @@
     .cm-checkbox {
       width: 100%;
       margin-top: 14px;
-      margin-bottom: 10px;
+      margin-bottom: 39px;
       .css-ahj2mt-MuiTypography-root {
-        font-size: 12px;
+        line-height: 19px;
       }
     }
   }
   &__validation {
+    position: absolute;
+    top: 308px;
     font-size: 13px;
     color: $error;
-    margin-bottom: 11px;
   }
   &-footer {
     margin-top: 20px;

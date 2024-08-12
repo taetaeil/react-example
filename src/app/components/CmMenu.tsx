@@ -1,14 +1,13 @@
-// 'use client'
-
 import * as React from 'react'
 import Menu from '@mui/material/Menu'
-import MenuItem from '@mui/material/MenuItem'
 import '../styles/common.scss' // css 파일
 
 // --------------------------------------- Menu ---------------------------------------
 export default function CmMenu(props: {
-  options: Array<any>
   trigger: React.ReactNode
+  title?: React.ReactNode
+  contents: React.ReactNode
+  className?: string
 }) {
   const [menuTrigger, setMenuTrigger] = React.useState<null | HTMLElement>(null)
   const open = Boolean(menuTrigger)
@@ -19,7 +18,7 @@ export default function CmMenu(props: {
     setMenuTrigger(null)
   }
   return (
-    <div className="header__menu">
+    <div>
       <button id="long-button" type="button" onClick={handleClick}>
         {props.trigger}
       </button>
@@ -28,26 +27,18 @@ export default function CmMenu(props: {
         anchorEl={menuTrigger}
         open={open}
         onClose={handleClose}
+        className={props.className}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'right',
+        }}
+        transformOrigin={{
+          vertical: -15,
+          horizontal: 'right',
+        }}
       >
-        <p className="header__menu--title">알람</p>
-        {props.options.map((option) => (
-          <MenuItem
-            key={option.name}
-            selected={option.name === 'AS1-MO-0101'}
-            onClick={handleClose}
-          >
-            <span
-              className={`${
-                option.status === 'error'
-                  ? 'header__menu--error'
-                  : 'header__menu--warning'
-              }`}
-            ></span>
-            <span>{option.name}</span>
-            <span>{option.type}</span>
-            <span>{option.time}</span>
-          </MenuItem>
-        ))}
+        {props.title}
+        {props.contents}
       </Menu>
     </div>
   )

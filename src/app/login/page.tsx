@@ -1,5 +1,7 @@
+'use client'
 import '../styles/login.scss' // css 파일
 
+import React, { useState } from 'react'
 import CmHeader from '../components/CmHeader' // header 컴포넌트
 import CmBasicInput from '../components/CmInput' // input 컴포넌트
 import CmCheckbox from '../components/CmCheckbox' // checkbox 컴포넌트
@@ -8,6 +10,7 @@ import CmIcon from '../components/CmIcon' // icon 컴포넌트
 export default function Login() {
   const idError = true
   const pwError = false
+  const [inputValue, setInputValue] = useState('')
   return (
     <>
       {/* header */}
@@ -23,11 +26,22 @@ export default function Login() {
       <div className="login">
         <div className="login-box">
           <h2 className="login-box__title">로그인</h2>
-          <CmBasicInput placeholder="회사번호"></CmBasicInput>
-          <CmBasicInput isError={idError} placeholder="아이디"></CmBasicInput>
+          <CmBasicInput
+            value={inputValue}
+            onChange={setInputValue}
+            placeholder="회사번호"
+          ></CmBasicInput>
+          <CmBasicInput
+            value={inputValue}
+            onChange={setInputValue}
+            isError={idError}
+            placeholder="아이디"
+          ></CmBasicInput>
           <CmBasicInput
             type="password"
             isError={pwError}
+            value={inputValue}
+            onChange={setInputValue}
             isSecret
             placeholder="비밀번호"
           ></CmBasicInput>

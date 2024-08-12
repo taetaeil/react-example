@@ -1,0 +1,44 @@
+@import './variables.scss';
+
+// 게이지 차트
+.cm-gauge-chart {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  &__grid {
+    position: absolute;
+    top: -25px;
+    width: 250px;
+    height: 250px;
+  }
+  &__desc {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    width: 122px;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 24px;
+    background: $white 0% 0% no-repeat padding-box;
+    box-shadow: inset 0px 2px 4px #22262b26;
+    border: 1px solid #e1e3e5;
+    border-radius: 4px;
+    transform: translateX(-50%);
+    color: $gray-150;
+    em {
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+}
+
+.cm-status-line-chart {
+  height: 230px;
+}
+
+.cm-line-chart {
+  height: 230px;
+}
