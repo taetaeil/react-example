@@ -1,17 +1,22 @@
 @import './variables.scss';
 
 .MuiRichTreeView-root {
+  .cm-tree__list--checked {
+    &.MuiTreeItem-content {
+      background: #f0f6fc;
+    }
+  }
   .MuiTreeItem-root {
     .MuiTreeItem-content {
       height: 36px;
       padding: 0 20px;
       border-radius: 0;
 
-      &:hover {
-        background-color: #f0f2f5;
-      }
       &.Mui-selected {
         background-color: #ffecde;
+      }
+      &:hover {
+        background-color: #f0f2f5;
       }
       .MuiTreeItem-iconContainer {
         width: 12px;
@@ -55,7 +60,7 @@
       }
     }
   }
-  .css-1lusc8a-MuiCollapse-root-MuiTreeItem2-groupTransition {
+  .MuiCollapse-vertical {
     padding-left: 0;
     .MuiCollapse-wrapper {
       .MuiCollapse-wrapperInner {

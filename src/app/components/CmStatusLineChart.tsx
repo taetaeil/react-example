@@ -27,6 +27,7 @@ export default function StatusLineComponent({
           },
           lineStyle: {
             color: '#F78A35',
+            width: 1,
           },
         },
         formatter: (params: any) => {
@@ -134,10 +135,11 @@ export default function StatusLineComponent({
           name: 'Entity Value',
           type: 'line',
           symbol: 'circle',
-          symbolSize: 7,
+          symbolSize: 5,
           data: data,
           lineStyle: {
             color: '#F78A35',
+            width: 1,
           },
           itemStyle: {
             borderColor: '#F78A35',

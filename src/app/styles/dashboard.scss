@@ -17,7 +17,7 @@
       margin-bottom: 14px;
       padding-right: 20px;
       line-height: 20px;
-      &:has(.dashboard-box__utils) {
+      &:has(.dashboard-box__utils, .dashboard-box__utils-btn) {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -50,7 +50,7 @@
         display: inline-block;
         width: 1px;
         height: 14px;
-        margin: 0 2px;
+        margin: 0 5px;
         background: $gray-10;
         opacity: 0.6;
       }
@@ -77,6 +77,40 @@
           text-decoration: underline;
           text-underline-position: under;
         }
+      }
+      &-btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        width: fit-content;
+        .btn__line {
+          display: inline-block;
+          height: 26px;
+          line-height: 24px;
+          padding: 0 10px;
+          font-size: 12px;
+          transition: $transition;
+          &--active {
+            background: transparent
+              linear-gradient(180deg, #deedfc 0%, #deedfc 20%, #ccdef6 100%) 0%
+              0% no-repeat padding-box;
+            border: 1px solid #2668c9;
+            color: $blue;
+          }
+        }
+        .btn__delete {
+          font-size: 12px;
+          font-weight: 500;
+          color: #6580a8;
+          &:hover {
+            text-decoration: underline;
+            text-underline-position: under;
+          }
+        }
+      }
+      &-menu {
+        display: flex;
+        gap: 10px;
       }
     }
     &__subtitle {
@@ -182,7 +216,7 @@
             flex-flow: column;
             height: 110px;
             padding: 10px 10px 8px;
-            border-radius: 9px;
+            border-radius: $radius-50;
           }
           %item-card {
             .item-card {
@@ -572,6 +606,26 @@
   //  ====================================== 데이터 비교 스타일 ======================================
 
   &-data {
+    padding-top: 48px;
+    &__header {
+      @extend .dashboard-detail__header;
+      justify-content: flex-end;
+      button {
+        font-size: 12px;
+        font-weight: 500;
+        color: #6580a8;
+        &:hover {
+          text-decoration: underline;
+        }
+        &:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
     .dashboard-box {
       width: 1616px;
       height: 480px;
@@ -588,6 +642,7 @@
       justify-content: center;
       align-items: center;
       height: 48px;
+      max-width: 1616px;
       width: 100%;
       margin-bottom: 16px;
       background: $white;

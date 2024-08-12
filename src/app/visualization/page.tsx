@@ -28,7 +28,7 @@ export default function Detail() {
         <div className="dashboard-box">
           <div className="dashboard-box__header">
             <label className="dashboard-box__title">Sensor Data 그래프</label>
-            <div className="dashboard-box__utils">
+            <div className="dashboard-box__utils-btn">
               <Tooltip
                 title="실행취소"
                 placement="right-end"
@@ -150,21 +150,23 @@ export default function Detail() {
                 </svg>
               </button>
               <span className="dashboard-box__utils-divide"></span>
-              <CmMenu
-                className="dashboard__data-select-p"
-                contents={<DataSelect></DataSelect>}
-                trigger={<span className="btn__line">데이터 선택</span>}
-              ></CmMenu>
+              <div className="dashboard-box__utils-menu">
+                <CmMenu
+                  className="dashboard__data-select-p"
+                  contents={<DataSelect></DataSelect>}
+                  trigger={<span className="btn__line">데이터 선택</span>}
+                ></CmMenu>
 
-              <CmMenu
-                className="dashboard__section-setting-p"
-                contents={<SectionSetting></SectionSetting>}
-                trigger={
-                  <span className="btn__line  btn__line--active">
-                    구간 설정
-                  </span>
-                }
-              ></CmMenu>
+                <CmMenu
+                  className="dashboard__section-setting-p"
+                  contents={<SectionSetting></SectionSetting>}
+                  trigger={
+                    <span className="btn__line  btn__line--active">
+                      구간 설정
+                    </span>
+                  }
+                ></CmMenu>
+              </div>
             </div>
           </div>
           <div className="dashboard-box__cont">
@@ -183,7 +185,7 @@ export default function Detail() {
         <div className="dashboard-box">
           <div className="dashboard-box__header">
             <label className="dashboard-box__title">Helth Index 그래프</label>
-            <div className="dashboard-box__utils">
+            <div className="dashboard-box__utils-btn">
               <Tooltip
                 title="실행취소"
                 placement="right-end"
@@ -305,20 +307,22 @@ export default function Detail() {
                 </svg>
               </button>
               <span className="dashboard-box__utils-divide"></span>
-              <CmMenu
-                className="dashboard__data-select-p"
-                contents={<DataSelect></DataSelect>}
-                trigger={
-                  <span className="btn__line btn__line--active">
-                    데이터 선택
-                  </span>
-                }
-              ></CmMenu>
-              <CmMenu
-                className="dashboard__section-setting-p"
-                contents={<SectionSetting></SectionSetting>}
-                trigger={<span className="btn__line">구간 설정</span>}
-              ></CmMenu>
+              <div className="dashboard-box__utils-menu">
+                <CmMenu
+                  className="dashboard__data-select-p"
+                  contents={<DataSelect></DataSelect>}
+                  trigger={
+                    <span className="btn__line btn__line--active">
+                      데이터 선택
+                    </span>
+                  }
+                ></CmMenu>
+                <CmMenu
+                  className="dashboard__section-setting-p"
+                  contents={<SectionSetting></SectionSetting>}
+                  trigger={<span className="btn__line">구간 설정</span>}
+                ></CmMenu>
+              </div>
             </div>
           </div>
           <div className="dashboard-box__cont">

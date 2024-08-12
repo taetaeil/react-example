@@ -40,6 +40,13 @@
 // 설정 팝업
 .page-setting {
   margin-top: 17px;
+  .cm-input {
+    input {
+      width: 400px;
+      color: $gray-150;
+      outline: 0;
+    }
+  }
 }
 .limitValue-setting {
   margin-top: 17px;
@@ -72,6 +79,8 @@
           }
           button {
             margin-left: 4px;
+            transform: rotate(0);
+            transition: $transition;
             &:hover {
               svg {
                 path {
@@ -96,6 +105,18 @@
           align-items: center;
           button {
             margin-left: 4px;
+            transition: all 0.2s linear;
+            transform: rotate(0deg);
+            &:hover {
+              svg {
+                path {
+                  fill: $blue;
+                }
+              }
+            }
+          }
+          &--active {
+            transform: rotate(-360deg) !important;
           }
         }
         tr {
@@ -167,21 +188,24 @@
   &__detail {
     .MuiFormControlLabel-root {
       &.cm-checkbox {
+        height: 40px;
+        width: 100%;
         .MuiTypography-root {
           padding-bottom: 0;
           color: #7b828c;
+        }
+        &:hover {
+          background: #f0f6fc;
         }
       }
     }
     ul {
       li {
-        padding: 12px;
         border-bottom: 1px solid #e1e3e5;
       }
     }
     &--depth {
-      padding-top: 20px;
-      padding-left: 24px;
+      padding: 20px 0 17px 24px;
     }
   }
 }

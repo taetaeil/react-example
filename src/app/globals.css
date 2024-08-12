@@ -266,8 +266,8 @@ em {
 
 html,
 body {
-  min-width: 1680px;
   height: 100%;
+  min-width: 900px;
   background: #f5f6f7;
   font-size: 14px;
 }

@@ -103,7 +103,7 @@ export default function CmGaugeChart({ title, value }: CmGaugeChartProps) {
             show: false,
           },
           detail: {
-            fontSize: 50,
+            fontSize: 36,
             offsetCenter: [0, '10%'],
             formatter: function (value: number) {
               return getDataName(value)

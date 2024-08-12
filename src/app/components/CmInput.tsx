@@ -59,9 +59,9 @@ export default function CmBasicInput({
       ) : isSecret ? (
         <button type="button" onClick={passwordOpen}>
           {openPw ? (
-            <CmIcon name="secret-on__line--555"></CmIcon>
-          ) : (
             <CmIcon name="secret-off__line--434"></CmIcon>
+          ) : (
+            <CmIcon name="secret-on__line--555"></CmIcon>
           )}
         </button>
       ) : null}

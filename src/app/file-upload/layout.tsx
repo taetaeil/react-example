@@ -168,7 +168,7 @@ export default function RootLayout({
           </>
         }
       ></CmHeader>
-      <CmSidebar contents={children}></CmSidebar>
+      <CmSidebar contents={children} initialMinwidth></CmSidebar>
     </>
   )
 }

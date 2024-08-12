@@ -14,9 +14,16 @@ export default function BasicRichTreeView({
   useCheckbox,
   useCount,
 }: BasicRichTreeViewProps) {
+  const isChecked = true
   const RichTreeItems = (props: any) => {
     return (
-      <CmTreeItem {...props} useCheckbox={useCheckbox} useCount={useCount} />
+      <CmTreeItem
+        {...props}
+        useCheckbox={useCheckbox}
+        useCount={useCount}
+        // FIXME 개발자: 개발하실 때 체크 된 리스트에 아래 클래스 넣어주시면 되겠습니다.
+        className={isChecked ? 'cm-tree__list--checked' : ''}
+      />
     )
   }
 

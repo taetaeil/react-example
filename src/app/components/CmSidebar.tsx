@@ -47,7 +47,10 @@ const Drawer = styled(MuiDrawer, {
   }),
 }))
 
-export default function MiniDrawer(props: { contents: ReactNode }) {
+export default function MiniDrawer(props: {
+  contents: ReactNode
+  initialMinwidth?: boolean
+}) {
   const [open, setOpen] = React.useState(false)
 
   const handleDrawerOpen = () => {
@@ -97,7 +100,10 @@ export default function MiniDrawer(props: { contents: ReactNode }) {
     },
   ]
   return (
-    <div className="sidebar">
+    <div
+      className="sidebar"
+      style={{ minWidth: props.initialMinwidth ? 'initial' : '' }}
+    >
       <Drawer variant="permanent" open={open}>
         <div className="sidebar__content">
           {open ? (

@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import './styles/common.scss' // css 파일
+// import './styles/common.scss' // css 파일
 
 // ====================================== Page ======================================
 export default function Home() {

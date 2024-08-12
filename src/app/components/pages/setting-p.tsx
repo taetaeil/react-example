@@ -234,6 +234,12 @@ export default function MuModal(props: { trigger: ReactNode }) {
       [name]: checked,
     })
   }
+  // 리셋버튼 클릭 이벤트
+  const [isClicked, setIsClicked] = useState<boolean>(false)
+  // 버튼 클릭 시 상태값을 true로 변경하는 함수
+  const handleClick = () => {
+    setIsClicked((prevState) => !prevState)
+  }
 
   return (
     <CmPopup
@@ -336,7 +342,13 @@ export default function MuModal(props: { trigger: ReactNode }) {
                               <span>&#40;일괄변경&#41;</span>
                             </div>
                           </div>
-                          <button type="button">
+                          <button
+                            type="button"
+                            onClick={handleClick}
+                            className={
+                              isClicked ? 'cm-table__body-btn--active' : ''
+                            }
+                          >
                             <svg
                               id="ico_reset"
                               xmlns="http://www.w3.org/2000/svg"
@@ -371,7 +383,13 @@ export default function MuModal(props: { trigger: ReactNode }) {
                               <span>&#40;일괄변경&#41;</span>
                             </div>
                           </div>
-                          <button type="button">
+                          <button
+                            type="button"
+                            onClick={handleClick}
+                            className={
+                              isClicked ? 'cm-table__body-btn--active' : ''
+                            }
+                          >
                             <svg
                               id="ico_reset"
                               xmlns="http://www.w3.org/2000/svg"
@@ -409,7 +427,13 @@ export default function MuModal(props: { trigger: ReactNode }) {
                             value={numberValue}
                             onChange={setNumberValue}
                           ></CmNumberInput>
-                          <button type="button">
+                          <button
+                            type="button"
+                            onClick={handleClick}
+                            className={
+                              isClicked ? 'cm-table__body-btn--active' : ''
+                            }
+                          >
                             <svg
                               id="ico_reset"
                               xmlns="http://www.w3.org/2000/svg"
@@ -441,7 +465,13 @@ export default function MuModal(props: { trigger: ReactNode }) {
                             value={numberValue}
                             onChange={setNumberValue}
                           ></CmNumberInput>
-                          <button type="button">
+                          <button
+                            type="button"
+                            onClick={handleClick}
+                            className={
+                              isClicked ? 'cm-table__body-btn--active' : ''
+                            }
+                          >
                             <svg
                               id="ico_reset"
                               xmlns="http://www.w3.org/2000/svg"
@@ -530,6 +560,7 @@ export default function MuModal(props: { trigger: ReactNode }) {
                   <CmDateTimePicker
                     view={['year', 'month', 'day', 'minutes']}
                     placeholder="현재"
+                    endDisabled
                   ></CmDateTimePicker>
                 </div>
                 <div className="form">
@@ -560,6 +591,7 @@ export default function MuModal(props: { trigger: ReactNode }) {
                   <CmDateTimePicker
                     view={['year', 'month', 'day', 'minutes']}
                     placeholder="고장/주의"
+                    endDisabled
                   ></CmDateTimePicker>
                 </div>
               </TabHorPanel>

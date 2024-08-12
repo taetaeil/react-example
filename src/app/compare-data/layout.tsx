@@ -9,6 +9,7 @@ import CmIcon from '../components/CmIcon' // icon 컴포넌트
 import SettingP from '../components/pages/setting-p' // 설정팝업
 import Popover from '@mui/material/Popover'
 import Tooltip from '@mui/material/Tooltip'
+import Header from './header'
 
 // --------------------------------------- Header ---------------------------------------
 const notiList = [
@@ -221,7 +222,14 @@ export default function RootLayout({
           </>
         }
       ></CmHeader>
-      <CmSidebar contents={children}></CmSidebar>
+      <CmSidebar
+        contents={
+          <div className="dashboard-detail__wrap">
+            <Header></Header>
+            {children}
+          </div>
+        }
+      ></CmSidebar>
     </>
   )
 }

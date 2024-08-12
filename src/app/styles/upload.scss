@@ -106,6 +106,13 @@
             height: 174px;
             padding: 14px 16px;
             border-top: 1px solid #e6e8eb;
+            .MuiRichTreeView-root {
+              .MuiTreeItem-root {
+                .MuiTreeItem-content {
+                  background: $white;
+                }
+              }
+            }
           }
         }
       }

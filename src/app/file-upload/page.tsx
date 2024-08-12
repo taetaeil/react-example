@@ -8,6 +8,7 @@ import CmIcon from '../components/CmIcon' // icon 컴포넌트
 
 export default function Main() {
   const [inputValue, setInputValue] = useState('')
+
   const menuList = [
     {
       id: 'press1',

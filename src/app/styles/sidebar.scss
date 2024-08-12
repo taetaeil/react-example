@@ -3,6 +3,7 @@
 .sidebar {
   display: flex;
   height: calc(100% - $header-h);
+  min-width: 1680px;
   // padding: 30px 30px 30px 0;
   &__main {
     display: flex;
@@ -45,6 +46,7 @@
         &__wrap {
           width: 100%;
           padding: 20px 0;
+          padding-right: 1px;
         }
       }
     }

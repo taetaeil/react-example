@@ -22,12 +22,8 @@ function CustomToolbar({ date, setDate }: CustomToolbarProps) {
   }
 
   return (
-    <div>
-      <button
-        type="button"
-        className="cm-datapicker__btn"
-        onClick={() => handleYearChange(-1)}
-      >
+    <div className="cm-datapicker__btn">
+      <button type="button" onClick={() => handleYearChange(-1)}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
@@ -54,11 +50,7 @@ function CustomToolbar({ date, setDate }: CustomToolbarProps) {
           </g>
         </svg>
       </button>
-      <button
-        type="button"
-        className="cm-datapicker__btn"
-        onClick={() => handleYearChange(1)}
-      >
+      <button type="button" onClick={() => handleYearChange(1)}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
@@ -92,12 +84,17 @@ function CustomToolbar({ date, setDate }: CustomToolbarProps) {
 interface RootLayoutProps {
   view: Array<any>
   placeholder?: string // placeholder를 선택적 prop으로 추가
+  endDisabled?: boolean
+  startDisabled?: boolean
 }
 
-export default function RootLayout({ view, placeholder }: RootLayoutProps) {
-  const [selectedDate, setSelectedDate] = useState<Dayjs | null>(
-    dayjs().add(1, 'day')
-  )
+export default function RootLayout({
+  view,
+  placeholder,
+  endDisabled,
+  startDisabled,
+}: RootLayoutProps) {
+  const [selectedDate, setSelectedDate] = useState<Dayjs | null>(null)
 
   const handleDateChange = (date: Dayjs | null) => {
     if (date) {
@@ -112,6 +109,7 @@ export default function RootLayout({ view, placeholder }: RootLayoutProps) {
           value={selectedDate}
           onChange={handleDateChange}
           views={view}
+          disabled={startDisabled}
           slotProps={{
             textField: {
               placeholder: placeholder || '날짜 및 시간을 선택하세요',
@@ -135,6 +133,7 @@ export default function RootLayout({ view, placeholder }: RootLayoutProps) {
           value={selectedDate}
           onChange={handleDateChange}
           views={view}
+          disabled={endDisabled}
           slotProps={{
             textField: {
               placeholder: placeholder || '날짜 및 시간을 선택하세요',

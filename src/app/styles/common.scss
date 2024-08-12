@@ -223,6 +223,7 @@
       height: 24px;
       padding-right: 30px;
       transition: none;
+      text-align: right;
       font-size: 13px;
       &:focus {
         outline: 0;
@@ -484,6 +485,17 @@
           }
         }
       }
+      &.Mui-disabled {
+        opacity: 1;
+        .MuiInputAdornment-root {
+          cursor: not-allowed;
+          .MuiButtonBase-root {
+            svg {
+              opacity: 0.5;
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -493,26 +505,32 @@
     border: 1px solid #e6e8eb;
     border-radius: $radius-50;
     .cm-datapicker__btn {
+      width: 100px;
+      height: 9px;
+      display: inline-block;
       position: absolute;
-      z-index: 1;
-      width: 20px;
-      height: 20px;
-      background: $white;
-      border: 1px solid #d3d7de;
-      border-radius: 3px;
-      &:hover {
-        background: #f2f5fa;
-        border: 1px solid #a3b3cc;
-      }
-      &:nth-child(1) {
-        top: 23px;
-        left: 13px;
-        transform: translateY(-50%);
-      }
-      &:nth-child(2) {
-        top: 23px;
-        left: 184px;
-        transform: translateY(-50%);
+      button {
+        position: absolute;
+        z-index: 1;
+        width: 20px;
+        height: 20px;
+        background: $white;
+        border: 1px solid #d3d7de;
+        border-radius: 3px;
+        &:hover {
+          background: #f2f5fa;
+          border: 1px solid #a3b3cc;
+        }
+        &:nth-child(1) {
+          top: 22px;
+          left: 13px;
+          transform: translateY(-50%);
+        }
+        &:nth-child(2) {
+          top: 22px;
+          left: 184px;
+          transform: translateY(-50%);
+        }
       }
     }
     .MuiPickersLayout-root {
@@ -620,21 +638,11 @@
                       Sans-serif;
                     font-size: 13px;
                     color: $gray-150;
-                    &.css-23p0if-MuiButtonBase-root-MuiPickersDay-root {
-                      border-radius: $radius-10;
-                      &:not(.Mui-selected) {
-                        border: 1px solid $gray-10;
-                        background: $white;
-                      }
-                      &.Mui-selected {
-                        color: $white;
-                      }
-                    }
-                    &.css-1wy8uaa-MuiButtonBase-root-MuiPickersDay-root {
-                      border-radius: $radius-10;
-                      &.Mui-selected {
-                        color: $white;
-                      }
+                    border-radius: $radius-10;
+                    border: 0;
+                    &.Mui-selected {
+                      border: none;
+                      color: $white;
                     }
                   }
                 }
