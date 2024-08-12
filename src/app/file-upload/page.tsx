@@ -1,4 +1,5 @@
 'use client'
+import React, { useState } from 'react'
 
 import '../styles/upload.scss' // css 파일
 import CmInput from '../components/CmInput' // input 컴포넌트
@@ -6,6 +7,7 @@ import CmTree from '../components/CmTree' // 트리메뉴
 import CmIcon from '../components/CmIcon' // icon 컴포넌트
 
 export default function Main() {
+  const [inputValue, setInputValue] = useState('')
   const menuList = [
     {
       id: 'press1',
@@ -105,6 +107,8 @@ export default function Main() {
 
       {/* input */}
       <CmInput
+        value={inputValue}
+        onChange={setInputValue}
         isReset={isUpload}
         placeholder=".json 형식의 파일"
         readOnly
