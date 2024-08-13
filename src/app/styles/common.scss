@@ -652,14 +652,14 @@
               }
             }
           }
-          .MuiPickersSlideTransition-root {
-            overflow: hidden;
-            min-height: initial;
-            max-height: 210px;
-            > * {
-              position: initial;
-            }
-          }
+          // .MuiPickersSlideTransition-root {
+          //   overflow: hidden;
+          //   min-height: initial;
+          //   max-height: 210px;
+          //   > * {
+          //     position: initial;
+          //   }
+          // }
         }
         // 분 선택
         .MuiMultiSectionDigitalClock-root {
