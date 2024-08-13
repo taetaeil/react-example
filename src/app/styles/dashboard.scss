@@ -221,7 +221,7 @@
           %item-card {
             .item-card {
               &__type {
-                width: 50px;
+                width: 52px;
                 padding: 0 6px 0 21px;
                 border-radius: 9px;
                 font-size: 12px;
@@ -373,6 +373,14 @@
           img {
             display: none;
           }
+          &:hover {
+            text-decoration: none;
+            cursor: default;
+          }
+        }
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
         }
       }
     }

@@ -51,6 +51,8 @@ export default function LineComponent({ data }: LineComponentProps) {
         show: true,
         left: 0,
         bottom: 20,
+        itemWidth: 20,
+        itemHeight: 10,
       },
       xAxis: {
         type: 'category',

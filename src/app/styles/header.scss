@@ -16,7 +16,7 @@
   background: $primary-10;
   color: $gray-50;
   &-logo {
-    margin-right: 97px;
+    margin-right: 64px;
   }
   &__menu {
     display: flex;
@@ -36,8 +36,11 @@
         background: #6b79994d;
       }
       &.header__nav--active {
-        background: #6b79994d;
+        background: #6b799933;
         border-color: $primary-30;
+      }
+      & + a {
+        margin-left: 12px;
       }
     }
   }
@@ -52,7 +55,11 @@
       margin-right: 4px;
     }
     &:hover {
-      background: #e1e4eb26;
+      background: #515d7866;
+      border: 1px solid #e1e4eb26;
+    }
+    &:active {
+      background: #515d78cc;
       border: 1px solid #e1e4eb26;
     }
   }
