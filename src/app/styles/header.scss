@@ -48,7 +48,8 @@
     display: flex;
     align-items: center;
     padding: 5px 12px;
-    border: 1px solid transparent;
+    background: #515d7800;
+    border: 1px solid #67718900;
     border-radius: $radius-10;
     color: #9ea6b8;
     img {
@@ -56,11 +57,11 @@
     }
     &:hover {
       background: #515d7866;
-      border: 1px solid #e1e4eb26;
+      border: 1px solid #67718966;
     }
     &:active {
       background: #515d78cc;
-      border: 1px solid #e1e4eb26;
+      border: 1px solid #677189cc;
     }
   }
   &__alram {
@@ -216,13 +217,17 @@
       line-height: 30px;
       padding: 0 8px 0 12px;
       background: #515d7866;
-      border: 1px solid #e1e4eb26;
+      border: 1px solid #67718966;
       border-radius: $radius-10;
       color: #e1e4eb;
       font-size: 12px;
-
       &:hover {
+        background: #515d78cc;
+        border-color: #677189cc;
+      }
+      &:active {
         background: #515d78;
+        border-color: #677189;
       }
       img {
         margin-left: 4px;
@@ -236,11 +241,16 @@
       width: 32px;
       height: 32px;
       margin-right: 12px;
-      border-radius: 50%;
-      border: 1px solid #e1e4eb26;
       background: #515d7880;
+      border-radius: 50%;
+      border: 1px solid #67718980;
       &:hover {
+        background: #515d78cc;
+        border-color: #677189cc;
+      }
+      &:active {
         background: #515d78;
+        border-color: #677189;
       }
     }
     &--badage {
