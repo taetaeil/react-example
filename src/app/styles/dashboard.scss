@@ -573,7 +573,7 @@
   }
   //  ====================================== 대시보드/상세 시각화 스타일 ======================================
   &-visualization {
-    overflow: hidden;
+    overflow-x: hidden;
     padding-top: 48px;
     justify-content: center;
     .dashboard-box {
