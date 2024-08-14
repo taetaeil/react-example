@@ -6,8 +6,7 @@
   flex-flow: column;
   align-items: center;
   height: 100%;
-  background: #f2f7fe url('/icons/watermark.svg') no-repeat bottom 16px right
-    20px;
+  background: url('/icons/watermark.svg') no-repeat bottom 16px right 20px;
 
   &-box {
     display: flex;
@@ -73,6 +72,9 @@
       }
     }
     .cm-input {
+      input {
+        background: #f7f8fa;
+      }
       & + .cm-input {
         margin-top: 12px;
       }
@@ -83,7 +85,7 @@
       }
     }
     .cm-checkbox {
-      width: 100%;
+      width: fit-content;
       margin-top: 14px;
       margin-bottom: 39px;
       .css-ahj2mt-MuiTypography-root {

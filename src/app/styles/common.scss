@@ -652,14 +652,19 @@
               }
             }
           }
-          // .MuiPickersSlideTransition-root {
-          //   overflow: hidden;
-          //   min-height: initial;
-          //   max-height: 210px;
-          //   > * {
-          //     position: initial;
-          //   }
-          // }
+          .MuiPickersSlideTransition-root {
+            overflow: hidden;
+            min-height: initial;
+            max-height: 210px;
+            .MuiDayCalendar-monthContainer {
+              &:nth-child(2) {
+                display: none;
+              }
+            }
+            > * {
+              position: relative;
+            }
+          }
         }
         // 분 선택
         .MuiMultiSectionDigitalClock-root {

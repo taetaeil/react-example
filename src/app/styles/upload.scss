@@ -91,6 +91,18 @@
           width: 180px;
           padding: 10px 0;
           border-right: 1px solid #e6e8eb;
+          .MuiRichTreeView-root {
+            .MuiTreeItem-root {
+              .MuiTreeItem-content {
+                &.Mui-selected {
+                  background: #f0f2f5;
+                  .MuiTreeItem-label {
+                    color: #43464d;
+                  }
+                }
+              }
+            }
+          }
         }
         &__detail {
           flex: 1 1 0%;
@@ -110,6 +122,9 @@
               .MuiTreeItem-root {
                 .MuiTreeItem-content {
                   background: $white;
+                  .MuiTreeItem-label {
+                    color: #43464d;
+                  }
                 }
               }
             }

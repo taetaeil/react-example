@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { ReactNode, useState } from 'react'
 import Checkbox from '@mui/material/Checkbox'
 import FormControlLabel from '@mui/material/FormControlLabel'
 
 // --------------------------------------- Checkbox ---------------------------------------
 export default function CmCheckbox(props: {
   disabled?: boolean
-  label?: string
+  label?: ReactNode
   required?: boolean
   checked?: boolean // 체크 여부를 제어하는 prop
   onChange?: (checked: boolean) => void // 체크 상태가 변경될 때 호출되는 함수

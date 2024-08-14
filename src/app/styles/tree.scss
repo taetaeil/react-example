@@ -2,8 +2,16 @@
 
 .MuiRichTreeView-root {
   .cm-tree__list--checked {
-    &.MuiTreeItem-content {
-      background: #f0f6fc;
+    background: #f0f6fc;
+    &.MuiTreeItem-root {
+      .MuiTreeItem-content {
+        &.Mui-selected {
+          background-color: #f0f6fc;
+          .MuiTreeItem-label {
+            color: #43464d;
+          }
+        }
+      }
     }
   }
   .MuiTreeItem-root {
@@ -14,6 +22,9 @@
 
       &.Mui-selected {
         background-color: #ffecde;
+        .MuiTreeItem-label {
+          color: $primary-20;
+        }
       }
       &:hover {
         background-color: #f0f2f5;
@@ -56,6 +67,15 @@
           text-overflow: ellipsis;
           white-space: nowrap;
           max-width: 100%;
+        }
+        .cm-checkbox {
+          overflow: hidden;
+          display: inline-block;
+          width: calc(100% + 20px);
+          line-height: 36px;
+          height: 36px;
+          text-overflow: ellipsis;
+          white-space: nowrap;
         }
       }
     }

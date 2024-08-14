@@ -15,13 +15,16 @@ const CustomTreeItem: React.FC<CustomTreeItemProps> = (props) => {
       {...other}
       itemId={itemId} // 필수 속성 추가
       label={
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          {useCheckbox ? <CmCheckbox /> : null}
-          <div className="cm-tree__title">{label}</div>
+        <>
+          {useCheckbox ? (
+            <CmCheckbox label={label} />
+          ) : (
+            <div className="cm-tree__title">{label}</div>
+          )}
           {useCount ? (
             <span className="cm-tree__count">&#40;{useCount}&#41;</span>
           ) : null}
-        </div>
+        </>
       }
     />
   )

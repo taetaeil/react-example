@@ -30,7 +30,7 @@ export default function Login() {
             <CmInput
               value={inputValue}
               onChange={setInputValue}
-              placeholder="회사번호"
+              placeholder="시스템계정"
             ></CmInput>
             <CmInput
               value={inputValue}

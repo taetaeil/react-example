@@ -59,21 +59,21 @@ export default function Main() {
       children: [
         {
           id: 'Sensor1',
-          label: 'Sensor #1: {x: time, y: amplitude, dttype:float32}',
+          label: 'Sensor #1: {unit: amplitude, dttype:float32}',
         },
         {
           id: 'Sensor2',
-          label: 'Sensor #2: {x: time, y: m/s^2, dttype:float32}',
+          label: 'Sensor #2: {unit: m/s^2, dttype:float32}',
         },
         {
           id: 'Sensor3',
-          label: 'Sensor #3: {x: time, y: volts, dttype:float32}',
+          label: 'Sensor #3: {unit: volts, dttype:float32}',
         },
       ],
     },
   ]
   // FIXME 개발자: 파일 업로드 중일 경우 임시 값 입니다.
-  const isUpload = false
+  const isUpload = true
 
   return (
     <div className="upload">

@@ -14,7 +14,7 @@ export default function BasicRichTreeView({
   useCheckbox,
   useCount,
 }: BasicRichTreeViewProps) {
-  const isChecked = true
+  const isChecked = false
   const RichTreeItems = (props: any) => {
     return (
       <CmTreeItem

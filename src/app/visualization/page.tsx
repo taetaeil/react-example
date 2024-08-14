@@ -3,7 +3,6 @@
 import React, { useState } from 'react'
 import CmLineChart from '../components/CmLineChart' // chart 컴포넌트
 import CmStatusLineChart from '../components/CmStatusLineChart' // chart 컴포넌트
-import Tooltip from '@mui/material/Tooltip'
 import CmMenu from '../components/CmMenu' // menu 컴포넌트
 import DataSelect from '../components/pages/data-select'
 import SectionSetting from '../components/pages/section-setting'
@@ -29,50 +28,32 @@ export default function Detail() {
           <div className="dashboard-box__header">
             <label className="dashboard-box__title">Sensor Data 그래프</label>
             <div className="dashboard-box__utils-btn">
-              <Tooltip
-                title="실행취소"
-                placement="right-end"
-                className="tooltip"
-                slotProps={{
-                  popper: {
-                    modifiers: [
-                      {
-                        name: 'offset',
-                        options: {
-                          offset: [26, 0],
-                        },
-                      },
-                    ],
-                  },
-                }}
-              >
-                <button type="button" className="btn__icon">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                  >
-                    <g id="ico_undo-nor" transform="translate(-1878 -24)">
-                      <rect
-                        id="icon"
-                        width="16"
-                        height="16"
-                        transform="translate(1878 24)"
-                        fill="none"
-                        opacity="0.1"
-                      />
-                      <path
-                        id="Path_51"
-                        data-name="Path 51"
-                        d="M-2991-7036.4v-1.2h4.25a3.153,3.153,0,0,0,3.148-3.15,3.153,3.153,0,0,0-3.148-3.15h-4.751v2.9l-4.5-3.5,4.5-3.5v2.9h4.751a4.354,4.354,0,0,1,4.35,4.35,4.354,4.354,0,0,1-4.35,4.351Z"
-                        transform="translate(4875 7074)"
-                        fill="#777d87"
-                      />
-                    </g>
-                  </svg>
-                </button>
-              </Tooltip>
+              <button type="button" className="btn__icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                >
+                  <g id="ico_undo-nor" transform="translate(-1878 -24)">
+                    <rect
+                      id="icon"
+                      width="16"
+                      height="16"
+                      transform="translate(1878 24)"
+                      fill="none"
+                      opacity="0.1"
+                    />
+                    <path
+                      id="Path_51"
+                      data-name="Path 51"
+                      d="M-2991-7036.4v-1.2h4.25a3.153,3.153,0,0,0,3.148-3.15,3.153,3.153,0,0,0-3.148-3.15h-4.751v2.9l-4.5-3.5,4.5-3.5v2.9h4.751a4.354,4.354,0,0,1,4.35,4.35,4.354,4.354,0,0,1-4.35,4.351Z"
+                      transform="translate(4875 7074)"
+                      fill="#777d87"
+                    />
+                  </g>
+                </svg>
+              </button>
               <button type="button" className="btn__icon">
                 <svg
                   id="ico_redo-nor"
@@ -186,50 +167,32 @@ export default function Detail() {
           <div className="dashboard-box__header">
             <label className="dashboard-box__title">Helth Index 그래프</label>
             <div className="dashboard-box__utils-btn">
-              <Tooltip
-                title="실행취소"
-                placement="right-end"
-                className="tooltip"
-                slotProps={{
-                  popper: {
-                    modifiers: [
-                      {
-                        name: 'offset',
-                        options: {
-                          offset: [26, 0],
-                        },
-                      },
-                    ],
-                  },
-                }}
-              >
-                <button type="button" className="btn__icon">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                  >
-                    <g id="ico_undo-nor" transform="translate(-1878 -24)">
-                      <rect
-                        id="icon"
-                        width="16"
-                        height="16"
-                        transform="translate(1878 24)"
-                        fill="none"
-                        opacity="0.1"
-                      />
-                      <path
-                        id="Path_51"
-                        data-name="Path 51"
-                        d="M-2991-7036.4v-1.2h4.25a3.153,3.153,0,0,0,3.148-3.15,3.153,3.153,0,0,0-3.148-3.15h-4.751v2.9l-4.5-3.5,4.5-3.5v2.9h4.751a4.354,4.354,0,0,1,4.35,4.35,4.354,4.354,0,0,1-4.35,4.351Z"
-                        transform="translate(4875 7074)"
-                        fill="#777d87"
-                      />
-                    </g>
-                  </svg>
-                </button>
-              </Tooltip>
+              <button type="button" className="btn__icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                >
+                  <g id="ico_undo-nor" transform="translate(-1878 -24)">
+                    <rect
+                      id="icon"
+                      width="16"
+                      height="16"
+                      transform="translate(1878 24)"
+                      fill="none"
+                      opacity="0.1"
+                    />
+                    <path
+                      id="Path_51"
+                      data-name="Path 51"
+                      d="M-2991-7036.4v-1.2h4.25a3.153,3.153,0,0,0,3.148-3.15,3.153,3.153,0,0,0-3.148-3.15h-4.751v2.9l-4.5-3.5,4.5-3.5v2.9h4.751a4.354,4.354,0,0,1,4.35,4.35,4.354,4.354,0,0,1-4.35,4.351Z"
+                      transform="translate(4875 7074)"
+                      fill="#777d87"
+                    />
+                  </g>
+                </svg>
+              </button>
               <button type="button" className="btn__icon">
                 <svg
                   id="ico_redo-nor"

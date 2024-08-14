@@ -50,8 +50,8 @@ export default function StatusLineComponent({
         left: 0,
         bottom: 20,
         data: ['Entity Value'],
-        itemWidth: 20,
-        itemHeight: 10,
+        itemWidth: 10,
+        itemHeight: 6,
       },
       xAxis: {
         type: 'category',
