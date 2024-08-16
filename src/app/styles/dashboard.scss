@@ -217,6 +217,7 @@
             height: 110px;
             padding: 10px 10px 8px;
             border-radius: $radius-50;
+            cursor: pointer;
           }
           %item-card {
             .item-card {
@@ -329,6 +330,11 @@
           img {
             max-height: 410px;
             object-fit: cover;
+          }
+        }
+        .cm-table__body {
+          tr {
+            cursor: pointer;
           }
         }
       }

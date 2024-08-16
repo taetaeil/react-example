@@ -43,6 +43,8 @@
   .cm-input {
     input {
       width: 400px;
+      height: 30px;
+      background: #f7f8fa;
       border-radius: $radius-10;
       color: $gray-150;
       outline: 0;
@@ -208,6 +210,15 @@
     }
     &--depth {
       padding: 20px 0 17px 24px;
+    }
+    .cm-datapicker {
+      .MuiFormControl-root {
+        .MuiInputBase-root {
+          .MuiInputBase-input {
+            background: #f7f8fa;
+          }
+        }
+      }
     }
   }
 }
