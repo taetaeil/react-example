@@ -708,3 +708,101 @@
     }
   }
 }
+
+// ===================================== timepicker =====================================
+.cm-timepicker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: $gray-150;
+  &__wrap {
+    display: flex;
+    align-items: center;
+  }
+  &__selected {
+    .MuiSelect-select {
+      color: $gray-150 !important;
+    }
+  }
+  .MuiInputBase-root {
+    border-radius: 3px 0 0 3px;
+    .MuiSelect-select {
+      width: 180px;
+      height: 30px;
+      line-height: 30px;
+      padding: 0 10px;
+      background: #f7f8fa;
+      box-sizing: border-box;
+      font-size: 13px;
+      font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', Sans-serif;
+      color: #55575980;
+      cursor: default;
+    }
+    .MuiSelect-nativeInput {
+      height: 30px;
+      line-height: 30px;
+    }
+    .MuiSvgIcon-root {
+      display: none;
+    }
+    .MuiOutlinedInput-notchedOutline {
+      border: 1px solid $gray-10;
+      border-right: 0;
+    }
+    &.Mui-disabled {
+      .MuiSelect-select {
+        cursor: not-allowed;
+        opacity: 0.5;
+      }
+      & + .cm-timepicker__btn {
+        background: url('/icons/calendar--disabled.svg') no-repeat center,
+          linear-gradient(180deg, #fafbfc 0%, #fafbfc 20%, #f2f4f7 100%) 0% 0%
+            no-repeat padding-box;
+        border: 1px solid $gray-10;
+        cursor: not-allowed;
+      }
+    }
+  }
+  &__btn {
+    width: 30px;
+    height: 30px;
+    background: url('/icons/calendar--default.svg') no-repeat center,
+      linear-gradient(180deg, #fafbfc 0%, #fafbfc 20%, #f2f4f7 100%) 0% 0%
+        no-repeat padding-box;
+    border-radius: 0 3px 3px 0;
+    border: 1px solid $gray-10;
+    transition: $transition;
+    &:hover {
+      background: url('/icons/calendar--selected.svg') no-repeat center,
+        linear-gradient(180deg, #deedfc 0%, #deedfc 20%, #ccdef6 100%) 0% 0%
+          no-repeat padding-box;
+      border-color: #93b9ea;
+    }
+    &--active {
+      background: url('/icons/calendar--active.svg') no-repeat center,
+        linear-gradient(180deg, #deedfc 0%, #deedfc 20%, #ccdef6 100%) 0% 0%
+          no-repeat padding-box;
+      border-color: $blue;
+    }
+  }
+
+  &__menu {
+    .MuiPaper-root {
+      min-width: 120px !important;
+      transform: translate(60px, 8px) !important;
+      height: 197px;
+      border: 1px solid #e6e8eb;
+      border-radius: 5px;
+      .MuiList-root {
+        .MuiMenuItem-root {
+          min-height: 30px;
+          padding: 0 10px;
+          font-size: 13px;
+          &:hover {
+            background: #f0f6fc;
+          }
+        }
+      }
+    }
+  }
+}

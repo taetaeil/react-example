@@ -6,11 +6,22 @@ import CmNumberInput from '../components/CmNumberInput' // input 컴포넌트
 import CmCheckbox from '../components/CmCheckbox' // checkbox 컴포넌트
 import CmSwitch from '../components/CmSwitch' // Switch 컴포넌트
 import CmSelect from '../components/CmSelect' // Select 컴포넌트
+import CmTimePicker from '../components/CmTimePicker' // timepicker 컴포넌트
 
 import Tooltip from '@mui/material/Tooltip'
 
 // ====================================== Page ======================================
 export default function Home() {
+  const selectTimeValue = { start: '', end: '' }
+  const selectTimeItems = [
+    { value: '5minutes ago', label: '5분 전' },
+    { value: '15minutes ago', label: '15분 전' },
+    { value: '30minutes ago', label: '30분 전' },
+    { value: '1hours ago', label: '1시간 전' },
+    { value: '3hours ago', label: '3시간 전' },
+    { value: '6hours ago', label: '6시간 전' },
+    { value: '12hours ago', label: '12시간 전' },
+  ]
   const [inputValue, setInputValue] = useState('')
   const selectValue = 'banana'
   const selectItems = [
@@ -31,6 +42,51 @@ export default function Home() {
       >
         Common Components
       </h1>
+      <h2
+        style={{
+          marginTop: '32px',
+          marginBottom: '16px',
+          paddingBottom: '8px',
+          borderBottom: '1px solid #dddddd',
+          fontWeight: '600',
+          fontSize: '18px',
+        }}
+      >
+        Time
+      </h2>
+      <ul style={{ padding: '0 15px' }}>
+        <li
+          style={{
+            display: 'flex',
+            flexFlow: 'column',
+            gap: '8px',
+            marginBottom: '12px',
+          }}
+        >
+          <p>basic</p>
+          <CmTimePicker
+            startValue={selectTimeValue.start} // 현재 선택된 시작값
+            endValue={selectTimeValue.end}
+            items={selectTimeItems}
+            placeholder="현재"
+          ></CmTimePicker>
+          <CmTimePicker
+            startValue={selectTimeValue.start} // 현재 선택된 시작값
+            endValue={selectTimeValue.end}
+            items={selectTimeItems}
+            placeholder="고장/주의"
+          ></CmTimePicker>
+          <p>disabled</p>
+          <CmTimePicker
+            startValue={selectTimeValue.start} // 현재 선택된 시작값
+            endValue={selectTimeValue.end}
+            items={selectTimeItems}
+            placeholder="현재"
+            startDisabled
+            endDisabled
+          ></CmTimePicker>
+        </li>
+      </ul>
       <h2
         style={{
           marginTop: '32px',
@@ -327,7 +383,7 @@ export default function Home() {
           fontSize: '18px',
         }}
       >
-        Form (작업중)
+        Form
       </h2>
       <ul style={{ padding: '0 15px' }}>
         <li
