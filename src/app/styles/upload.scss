@@ -17,11 +17,11 @@
   }
   &__file {
     input[type='file'] {
+      overflow: hidden;
       position: absolute;
       width: 0;
       height: 0;
       padding: 0;
-      overflow: hidden;
       border: 0;
     }
     label {
@@ -39,8 +39,8 @@
       cursor: pointer;
       span {
         display: flex;
-        width: 160px;
         justify-content: center;
+        width: 160px;
         font-weight: 500;
         color: #2a528c;
         img {
@@ -48,10 +48,10 @@
         }
         &.upload__file-desc {
           margin-top: 8px;
+          text-align: center;
           font-size: 12px;
           font-weight: 400;
           color: #5b6778;
-          text-align: center;
         }
       }
       &:hover {
@@ -74,11 +74,11 @@
     height: 450px;
     margin-top: 16px;
     background: $white;
-    border: 1px solid #e6e8eb;
+    border: 1px solid $gray-8;
     border-radius: 6px;
     &-title {
       padding: 14px 20px;
-      border-bottom: 1px solid #e6e8eb;
+      border-bottom: 1px solid $gray-8;
       color: $gray-250;
       font-weight: 500;
     }
@@ -90,14 +90,14 @@
           overflow: auto;
           width: 180px;
           padding: 10px 0;
-          border-right: 1px solid #e6e8eb;
+          border-right: 1px solid $gray-8;
           .MuiRichTreeView-root {
             .MuiTreeItem-root {
               .MuiTreeItem-content {
                 &.Mui-selected {
                   background: #f0f2f5;
                   .MuiTreeItem-label {
-                    color: #43464d;
+                    color: $gray-500;
                   }
                 }
               }
@@ -117,13 +117,13 @@
             overflow: auto;
             height: 174px;
             padding: 14px 16px;
-            border-top: 1px solid #e6e8eb;
+            border-top: 1px solid $gray-8;
             .MuiRichTreeView-root {
               .MuiTreeItem-root {
                 .MuiTreeItem-content {
                   background: $white;
                   .MuiTreeItem-label {
-                    color: #43464d;
+                    color: $gray-500;
                   }
                 }
               }

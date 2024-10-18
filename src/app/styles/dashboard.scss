@@ -4,6 +4,8 @@
   // ====================================== 대시보드 공통 스타일 ======================================
   display: grid;
   gap: 14px;
+  height: fit-content;
+  padding-right: 30px;
   &-box {
     display: flex;
     flex-flow: column;
@@ -11,12 +13,12 @@
     padding-right: 0; // 스크롤 발생 시 스타일을 위함
     background: $white;
     border-radius: 6px;
-    border: 1px solid #e6e8eb;
+    border: 1px solid $gray-8;
     box-sizing: border-box;
     &__header {
+      line-height: 20px;
       margin-bottom: 14px;
       padding-right: 20px;
-      line-height: 20px;
       &:has(.dashboard-box__utils, .dashboard-box__utils-btn) {
         display: flex;
         justify-content: space-between;
@@ -65,14 +67,14 @@
           background: transparent
             linear-gradient(180deg, #deedfc 0%, #deedfc 20%, #ccdef6 100%) 0% 0%
             no-repeat padding-box;
-          border: 1px solid #2668c9;
+          border: 1px solid $blue;
           color: $blue;
         }
       }
       .btn__delete {
         font-size: 12px;
         font-weight: 500;
-        color: #6580a8;
+        color: $gray-140;
         &:hover {
           text-decoration: underline;
           text-underline-position: under;
@@ -94,14 +96,14 @@
             background: transparent
               linear-gradient(180deg, #deedfc 0%, #deedfc 20%, #ccdef6 100%) 0%
               0% no-repeat padding-box;
-            border: 1px solid #2668c9;
+            border: 1px solid $blue;
             color: $blue;
           }
         }
         .btn__delete {
           font-size: 12px;
           font-weight: 500;
-          color: #6580a8;
+          color: $gray-140;
           &:hover {
             text-decoration: underline;
             text-underline-position: under;
@@ -116,7 +118,7 @@
     &__subtitle {
       display: inline-block;
       margin-bottom: 10px;
-      color: #7b828c;
+      color: $gray-80;
       font-size: 12px;
       font-weight: 500;
     }
@@ -139,12 +141,15 @@
   }
   //  ====================================== 대시보드/메인 스타일 ======================================
   &-main {
-    grid-template-columns: 256px 664px 664px;
+    grid-template-columns: minmax(172px, 256px) minmax(565px, 664px) minmax(565px, 664px);
     grid-template-rows: 292px 486px;
 
     .dashboard-box {
       &:nth-child(4) {
         grid-column: 1 / 3;
+      }
+      &:last-child {
+        height: 486px;
       }
       &__cont {
         // 전체 상태
@@ -155,7 +160,7 @@
           %card {
             position: relative;
             height: 70px;
-            width: 216px;
+            width: 100%;
             padding: 8px 12px;
             border-radius: $radius-50;
             label {
@@ -164,14 +169,19 @@
               color: $white;
             }
             span {
+              overflow: hidden;
               position: absolute;
               top: 50%;
               left: 50%;
+              width:100%;
+              padding: 0 12px;
               transform: translate(-50%, -50%);
               text-align: center;
+              text-overflow: ellipsis;
               color: $white;
               font-size: 24px;
               font-weight: 600;
+              white-space: nowrap;
             }
           }
           .total-card {
@@ -197,9 +207,9 @@
             width: 100%;
             height: 70px;
             padding: 8px 12px;
-            box-sizing: border-box;
-            border: 1px solid #e1e3e5;
+            border: 1px solid $gray-5;
             border-radius: $radius-50;
+            box-sizing: border-box;
             & + .asset-box {
               margin-top: 10px;
             }
@@ -208,7 +218,8 @@
         // 품목상태
         &-item {
           display: grid;
-          grid-template-columns: repeat(4, 148px);
+          justify-content: center;
+          grid-template-columns: repeat(auto-fill, 148px);
           grid-template-rows: repeat(auto-fill, 110px);
           gap: 10px;
           li {
@@ -230,17 +241,17 @@
                 color: $white;
               }
               &__status {
-                margin: 8px auto 6px;
                 line-height: 24px;
+                margin: 8px auto 6px;
                 font-size: 20px;
                 font-weight: 600;
                 color: $white;
               }
               &__model {
                 overflow: hidden;
+                line-height: 19px;
                 text-overflow: ellipsis;
                 white-space: nowrap;
-                line-height: 19px;
                 font-size: 13px;
                 font-weight: 500;
                 color: $white;
@@ -344,18 +355,20 @@
   //  ====================================== 대시보드/상세 스타일 ======================================
   &-detail {
     justify-content: center;
-    grid-template-columns: 528px 392px 664px;
+    grid-template-columns: minmax(434px, 528px) minmax(298px, 392px) minmax(570px, 664px);
     grid-template-rows: repeat(3, 300px);
     padding-top: 48px;
+    padding-bottom: 14px;
     &__wrap {
-      overflow: auto;
       display: flex;
       justify-content: center;
+      overflow: auto;
       width: 100%;
       height: 100%;
     }
     &__header {
       display: flex;
+      align-items: center;
       position: absolute;
       top: 0;
       left: -32px;
@@ -364,7 +377,6 @@
       height: 48px;
       padding: 0 33px;
       background: $white;
-      align-items: center;
       box-shadow: inset 0px -1px 0px #d8dde3;
       font-size: 13px;
       color: #777d87;
@@ -410,12 +422,10 @@
             display: flex;
             flex-flow: column;
             flex: 1 1 0%;
+            padding-right:5px;
             &__title {
-              overflow: hidden;
-              text-overflow: ellipsis;
               display: inline-block;
-              width: 190px;
-              white-space: nowrap;
+              word-break: break-all;
               font-size: 20px;
               font-weight: 500;
               color: $gray-250;
@@ -428,8 +438,8 @@
               line-height: 20px;
               margin-top: 5px;
               padding: 0 10px;
-              border-radius: 10px;
               background: #8b99ad33;
+              border-radius: 10px;
               font-weight: 500;
               font-size: 13px;
               color: $gray-100;
@@ -451,7 +461,7 @@
         flex: 1 1 0%;
         height: 100%;
         padding: 4px 0;
-        border-right: 1px solid #e6e8eb;
+        border-right: 1px solid $gray-8;
       }
       &__cont {
         width: 420px;
@@ -469,7 +479,7 @@
           line-height: 32px;
           padding: 0 12px;
           margin-bottom: 8px;
-          border: 1px solid #d3d7de;
+          border: 1px solid $gray-10;
           border-radius: $radius-10;
           font-size: 13px;
           color: $blue;
@@ -484,19 +494,19 @@
             height: 30px;
             line-height: 30px;
             padding: 0 12px;
-            border-bottom: 1px solid #e1e3e5;
+            border-bottom: 1px solid $gray-5;
             font-size: 13px;
             color: $gray-150;
             &:nth-child(2n) {
               background: #f5f6f7;
             }
             &:hover {
-              background: #f0f6fc;
+              background: $gray-3-1;
             }
             span {
               overflow: hidden;
-              text-overflow: ellipsis;
               flex: 1 1 0%;
+              text-overflow: ellipsis;
               white-space: nowrap;
             }
           }
@@ -513,7 +523,7 @@
       }
       &__btn {
         font-size: 12px;
-        color: #6580a8;
+        color: $gray-140;
         &:hover {
           text-decoration: underline;
           text-underline-position: under;
@@ -529,7 +539,7 @@
       .MuiMenu-paper {
         width: 661px;
         height: 468px;
-        border: 1px solid #e6e8eb;
+        border: 1px solid $gray-8;
         border-radius: 5px;
         box-shadow: 0px 4px 8px #22262b26;
         .MuiMenu-list {
@@ -567,23 +577,29 @@
       .MuiMenu-paper {
         width: 484px;
         height: 174px;
-        border: 1px solid #e6e8eb;
+        border: 1px solid $gray-8;
         border-radius: 5px;
         box-shadow: 0px 4px 8px #22262b26;
         .MuiMenu-list {
-          padding: 22px 20px 18px;
           height: 100%;
+          padding: 22px 20px 18px;
         }
       }
     }
   }
   //  ====================================== 대시보드/상세 시각화 스타일 ======================================
   &-visualization {
+    grid-template-columns: minmax(990px, 1616px);
+    justify-content: center;
     overflow-x: hidden;
     padding-top: 48px;
-    justify-content: center;
+    > li {
+      &:last-child {
+        padding-bottom: 14px;
+      }
+    }
     .dashboard-box {
-      width: 1616px;
+      width: 100%;
     }
     .cm-status-line-chart {
       height: 600px;
@@ -603,18 +619,18 @@
       margin-top: 20px;
       margin-left: auto;
       background: $white;
-      border: 1px solid #d3d7de;
+      border: 1px solid $gray-10;
       border-radius: $radius-10;
       font-weight: 500;
-      color: #6580a8;
+      color: $gray-140;
       transition: $transition;
       &:hover {
-        background: #f2f5fa;
-        border-color: #a3b3cc;
+        background: $gray-3;
+        border-color: $gray-30;
       }
       &:active {
-        background: #ebf1fa;
-        border-color: #6d8fc2;
+        background: $gray-4;
+        border-color: $gray-130;
       }
     }
   }
@@ -622,6 +638,9 @@
   //  ====================================== 데이터 비교 스타일 ======================================
 
   &-data {
+    grid-template-columns: minmax(990px, 1616px);
+    justify-content: center;
+    overflow-x: hidden;
     padding-top: 48px;
     &__header {
       @extend .dashboard-detail__header;
@@ -629,7 +648,7 @@
       button {
         font-size: 12px;
         font-weight: 500;
-        color: #6580a8;
+        color: $gray-140;
         &:hover {
           text-decoration: underline;
         }
@@ -643,14 +662,12 @@
       }
     }
     .dashboard-box {
-      width: 1616px;
+      width: 100%;
       height: 480px;
+      margin-bottom: 14px;
       .cm-line-chart,
       .cm-status-line-chart {
         height: 412px;
-      }
-      & + .dashboard-box {
-        margin-top: 16px;
       }
     }
     &__btn {
@@ -665,15 +682,41 @@
       border: 1px solid $gray-10;
       border-radius: 6px;
       transition: $transition;
-      color: #6580a8;
+      color: $gray-140;
       &:hover {
-        background: #f2f5fa;
-        border: 1px solid #a3b3cc;
+        background: $gray-3;
+        border: 1px solid $gray-30;
       }
       &:active {
-        background: #ebf1fa;
-        border: 1px solid #6d8fc2;
+        background: $gray-4;
+        border: 1px solid $gray-130;
       }
     }
   }
 }
+
+// responsive 1600
+@media (max-width: 1600px) { 
+  .dashboard {
+    &-main {
+      grid-template-columns: minmax(268px, 358px) minmax(622px, 924px);
+      grid-template-rows: 292px 292px;
+      .dashboard-box {
+        &:nth-child(3), &:nth-child(5) {
+          grid-column: 1/3;
+        }
+        &:last-child {
+          margin-bottom: 14px;
+        }
+      }
+    }
+    &-detail {
+      grid-template-columns: minmax(580px, 735px) minmax(392px, 547px);
+      .dashboard-box {
+        &:nth-child(3),&:nth-child(4),&:nth-child(5) {
+          grid-column: 1/3;
+        }
+      }
+    }
+  }
+} 

@@ -2,10 +2,10 @@
 
 // 게이지 차트
 .cm-gauge-chart {
-  position: relative;
-  height: 100%;
   display: flex;
   justify-content: center;
+  position: relative;
+  height: 100%;
   &__grid {
     position: absolute;
     top: -25px;
@@ -23,9 +23,9 @@
     line-height: 36px;
     padding: 0 24px;
     background: $white 0% 0% no-repeat padding-box;
-    box-shadow: inset 0px 2px 4px #22262b26;
-    border: 1px solid #e1e3e5;
+    border: 1px solid $gray-5;
     border-radius: 4px;
+    box-shadow: inset 0px 2px 4px #22262b26;
     transform: translateX(-50%);
     font-size: 13px;
     color: $gray-150;

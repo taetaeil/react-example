@@ -5,11 +5,11 @@
   height: $btn-h;
   min-width: 74px;
   padding: 0 24px;
+  border-width: 1px;
   border-radius: $radius-10;
   box-sizing: border-box;
   transition: $transition;
   font-weight: 500;
-  border-width: 1px;
   &:has(img) {
     display: flex;
     align-items: center;
@@ -56,14 +56,14 @@
       background: transparent
         linear-gradient(180deg, #deedfc 0%, #deedfc 20%, #ccdef6 100%) 0% 0%
         no-repeat padding-box;
-      border-color: #93b9ea;
+      border-color: $gray-70;
       color: $blue;
     }
     &:active {
       background: transparent
         linear-gradient(180deg, #deedfc 0%, #deedfc 20%, #ccdef6 100%) 0% 0%
         no-repeat padding-box;
-      border-color: #2668c9;
+      border-color: $blue;
       color: $blue;
     }
   }
@@ -78,27 +78,27 @@
     border: 1px solid $gray-10;
     transition: $transition;
     &:hover {
-      background: #f2f5fa;
-      border: 1px solid #a3b3cc;
+      background: $gray-3;
+      border: 1px solid $gray-30;
       g {
         opacity: 1;
       }
     }
     &:active {
-      background: #ebf1fa;
-      border: 1px solid #6d8fc2;
+      background: $gray-4;
+      border: 1px solid $gray-130;
       svg {
         path {
-          fill: #2668c9;
+          fill: $blue;
         }
       }
     }
     &--active {
-      background: #ebf1fa;
-      border: 1px solid #6d8fc2;
+      background: $gray-4;
+      border: 1px solid $gray-130;
       svg {
         path {
-          fill: #2668c9;
+          fill: $blue;
         }
       }
     }
@@ -147,7 +147,6 @@
 // ===================================== Input =====================================
 .cm-input {
   display: inline-block;
-  // flex: 1 1 0%;
   position: relative;
   width: 100%;
 
@@ -202,7 +201,7 @@
   }
   &--filled {
     input {
-      background: #f7f8fa;
+      background: $gray-2;
     }
   }
   &--error {
@@ -222,7 +221,7 @@
     input {
       height: 24px;
       padding-right: 30px;
-      background: #f7f8fa;
+      background: $gray-2;
       transition: none;
       text-align: right;
       font-size: 13px;
@@ -309,8 +308,8 @@
     align-items: center;
     justify-items: center;
     min-height: 26px;
-    line-height: 16px;
     max-width: 195px;
+    line-height: 16px;
     padding: 5px 12px;
     margin-top: 31px !important;
     margin-left: 0px !important;
@@ -380,7 +379,7 @@
   .MuiSwitch-track {
     width: 25px;
     height: 14px;
-    background: #d3d7de;
+    background: $gray-10;
     opacity: 1;
   }
 }
@@ -395,7 +394,6 @@
 
   .MuiFormControl-root {
     background: $white;
-    // background: #f7f8fa;
     .MuiInputBase-root {
       padding-right: 0;
       border-radius: $radius-10;
@@ -412,11 +410,11 @@
         height: 30px;
         width: 181px;
         padding: 0 10px;
-        background: #f7f8fa;
-        border: 1px solid #d3d7de;
+        background: $gray-2;
+        border: 1px solid $gray-10;
         border-right: 0;
-        box-sizing: border-box;
         border-radius: 3px 0px 0px 3px;
+        box-sizing: border-box;
         color: $gray-150;
         &:placeholder-shown {
           background: $white;
@@ -431,16 +429,16 @@
       }
       // 버튼
       .MuiInputAdornment-root {
-        padding: 0;
         width: 30px;
         height: 30px;
         max-height: initial;
         margin-left: 0;
+        padding: 0;
+        border: 1px solid $gray-10;
+        border-radius: 0px 3px 3px 0px;
         background: transparent
           linear-gradient(180deg, #fafbfc 0%, #fafbfc 20%, #f2f4f7 100%) 0% 0%
           no-repeat padding-box;
-        border: 1px solid #d3d7de;
-        border-radius: 0px 3px 3px 0px;
         box-sizing: border-box;
         .MuiButtonBase-root {
           width: 30px;
@@ -448,9 +446,6 @@
           padding: 0;
           border-radius: 0px 3px 3px 0px;
           svg {
-            background: transparent
-              linear-gradient(180deg, #deedfc 0%, #deedfc 20%, #ccdef6 100%) 0%
-              0% no-repeat padding-box;
             background: url('/icons/calendar--selected.svg') no-repeat center;
             path {
               display: none;
@@ -460,7 +455,7 @@
             background: transparent
               linear-gradient(180deg, #deedfc 0%, #deedfc 20%, #ccdef6 100%) 0%
               0% no-repeat padding-box;
-            border: 1px solid #93b9ea;
+            border: 1px solid $gray-70;
           }
         }
       }
@@ -478,7 +473,7 @@
           background: transparent
             linear-gradient(180deg, #deedfc 0%, #deedfc 20%, #ccdef6 100%) 0% 0%
             no-repeat padding-box;
-          border: 1px solid #2668c9;
+          border: 1px solid $blue;
           .MuiButtonBase-root {
             svg {
               background: url('/icons/calendar--active.svg') no-repeat center;
@@ -503,27 +498,27 @@
 .MuiPickersPopper-root {
   margin-left: -7px !important;
   .MuiPickersPopper-paper {
-    box-shadow: 0px 4px 8px #22262b26;
-    border: 1px solid #e6e8eb;
+    border: 1px solid $gray-8;
     border-radius: $radius-50;
+    box-shadow: 0px 4px 8px #22262b26;
     .cm-datapicker__btn {
       position: absolute;
       width: 100px;
       height: 9px;
       button {
-        position: absolute;
-        z-index: 1;
         display: flex;
         align-items: center;
         justify-content: center;
+        position: absolute;
+        z-index: 1;
         width: 20px;
         height: 20px;
         background: $white;
-        border: 1px solid #d3d7de;
+        border: 1px solid $gray-10;
         border-radius: 3px;
         &:hover {
-          background: #f2f5fa;
-          border: 1px solid #a3b3cc;
+          background: $gray-3;
+          border: 1px solid $gray-30;
         }
         &:nth-child(1) {
           top: 22px;
@@ -546,9 +541,9 @@
         // 캘린더
         .MuiDateCalendar-root {
           width: 216px;
+          height: fit-content;
           min-height: 212px;
           max-height: 242px;
-          height: fit-content;
           // 헤더
           .MuiPickersCalendarHeader-root {
             position: relative;
@@ -577,7 +572,7 @@
                 width: 20px;
                 height: 20px;
                 padding: 0;
-                border: 1px solid #d3d7de;
+                border: 1px solid $gray-10;
                 border-radius: $radius-10;
                 transform: translateY(-50%);
                 svg {
@@ -588,8 +583,8 @@
                   }
                 }
                 &:hover {
-                  background: #f2f5fa;
-                  border: 1px solid #a3b3cc;
+                  background: $gray-3;
+                  border: 1px solid $gray-30;
                 }
               }
               .MuiIconButton-edgeStart {
@@ -599,7 +594,7 @@
                 width: 20px;
                 height: 20px;
                 padding: 0;
-                border: 1px solid #d3d7de;
+                border: 1px solid $gray-10;
                 border-radius: $radius-10;
                 transform: translateY(-50%);
                 svg {
@@ -610,8 +605,8 @@
                   }
                 }
                 &:hover {
-                  background: #f2f5fa;
-                  border: 1px solid #a3b3cc;
+                  background: $gray-3;
+                  border: 1px solid $gray-30;
                 }
               }
             }
@@ -622,7 +617,7 @@
               .MuiDayCalendar-weekDayLabel {
                 width: 24px;
                 height: 17px;
-                color: #7b828c;
+                color: $gray-80;
                 font-size: 12px;
                 font-weight: 500;
                 font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', Sans-serif;
@@ -638,12 +633,12 @@
                   .MuiPickersDay-root {
                     width: 24px;
                     height: 24px;
+                    border: 0;
+                    border-radius: $radius-10;
                     font-family: 'Noto Sans KR', 'Apple SD Gothic Neo',
                       Sans-serif;
                     font-size: 13px;
                     color: $gray-150;
-                    border-radius: $radius-10;
-                    border: 0;
                     &.Mui-selected {
                       border: none;
                       color: $white;
@@ -670,7 +665,7 @@
         // 분 선택
         .MuiMultiSectionDigitalClock-root {
           height: 212px;
-          border-left: 1px solid #e6e8eb;
+          border-left: 1px solid $gray-8;
           .MuiMultiSectionDigitalClockSection-root {
             width: 120px;
             .MuiMenuItem-root {
@@ -683,10 +678,10 @@
               font-size: 13px;
               color: $gray-150;
               &.Mui-selected {
-                background: #f0f6fc;
+                background: $gray-3-1;
               }
               &:hover {
-                background: #f0f6fc;
+                background: $gray-3-1;
               }
             }
           }
@@ -697,7 +692,7 @@
         .MuiButtonBase-root {
           &:nth-child(1) {
             @extend .btn__line;
-            border: 1px solid #d3d7de;
+            border: 1px solid $gray-10;
           }
           &:nth-child(2) {
             @extend .btn__primary;
@@ -731,7 +726,7 @@
       height: 30px;
       line-height: 30px;
       padding: 0 10px;
-      background: #f7f8fa;
+      background: $gray-2;
       box-sizing: border-box;
       font-size: 13px;
       font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', Sans-serif;
@@ -776,7 +771,7 @@
       background: url('/icons/calendar--selected.svg') no-repeat center,
         linear-gradient(180deg, #deedfc 0%, #deedfc 20%, #ccdef6 100%) 0% 0%
           no-repeat padding-box;
-      border-color: #93b9ea;
+      border-color: $gray-70;
     }
     &--active {
       background: url('/icons/calendar--active.svg') no-repeat center,
@@ -789,17 +784,17 @@
   &__menu {
     .MuiPaper-root {
       min-width: 120px !important;
-      transform: translate(60px, 8px) !important;
       height: 197px;
-      border: 1px solid #e6e8eb;
+      border: 1px solid $gray-8;
       border-radius: 5px;
+      transform: translate(60px, 8px) !important;
       .MuiList-root {
         .MuiMenuItem-root {
           min-height: 30px;
           padding: 0 10px;
           font-size: 13px;
           &:hover {
-            background: #f0f6fc;
+            background: $gray-3-1;
           }
         }
       }

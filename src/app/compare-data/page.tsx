@@ -26,7 +26,7 @@ export default function CompareData() {
     data: [80, 82, 70, 70, 60, 78, 77, 68, 70, 80],
   })
   return (
-    <div className="dashboard-data">
+    <div className="dashboard dashboard-data">
       <button type="button" className="dashboard-data__btn">
         <CmIcon name="plus__line--658"></CmIcon>
         그래프 추가

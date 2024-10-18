@@ -27,12 +27,6 @@
           }
         }
       }
-      // 컨텐츠
-      .MuiDialogContent-root {
-      }
-      // 풋터
-      .MuiDialogActions-root {
-      }
     }
   }
 }
@@ -44,7 +38,7 @@
     input {
       width: 400px;
       height: 30px;
-      background: #f7f8fa;
+      background: $gray-2;
       border-radius: $radius-10;
       color: $gray-150;
       outline: 0;
@@ -72,13 +66,13 @@
             margin-right: 4px;
           }
           label {
-            margin-bottom: 3px;
             line-height: 17px;
+            margin-bottom: 3px;
           }
           span {
             line-height: 15px;
             font-size: 10px;
-            color: #7b828c;
+            color: $gray-80;
           }
           button {
             margin-left: 4px;
@@ -163,23 +157,23 @@
       }
       .history {
         &__title {
+          display: inline-block;
           position: sticky;
           top: 0;
           z-index: 1;
-          display: inline-block;
           width: 100%;
           padding-top: 9px;
           background: #f0f5fa;
           font-size: 12px;
           font-weight: 500;
-          color: #7b828c;
+          color: $gray-80;
         }
         &__menu--new {
           display: inline-block;
           width: 6px;
           height: 6px;
           margin-right: 6px;
-          background: #555759;
+          background: $gray-150;
           border-radius: 50%;
         }
       }
@@ -196,16 +190,16 @@
         padding-left: 12px;
         .MuiTypography-root {
           padding-bottom: 0;
-          color: #7b828c;
+          color: $gray-80;
         }
         &:hover {
-          background: #f0f6fc;
+          background: $gray-3-1;
         }
       }
     }
     ul {
       li {
-        border-bottom: 1px solid #e1e3e5;
+        border-bottom: 1px solid $gray-5;
       }
     }
     &--depth {
@@ -215,7 +209,7 @@
       .MuiFormControl-root {
         .MuiInputBase-root {
           .MuiInputBase-input {
-            background: #f7f8fa;
+            background: $gray-2;
           }
         }
       }

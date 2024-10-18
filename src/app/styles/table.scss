@@ -4,8 +4,8 @@
   width: 100%;
   table-layout: fixed;
   &__container {
-    max-height: 100%; /* 원하는 높이 설정 */
     overflow-y: auto; /* 스크롤 가능하게 설정 */
+    max-height: 100%; /* 원하는 높이 설정 */
   }
   &__header {
     tr {
@@ -20,7 +20,7 @@
         border-bottom: 1px solid #ced1d6;
         font-size: 12px;
         font-weight: 500;
-        color: #7b828c;
+        color: $gray-80;
         &.text-left {
           text-align: left;
         }
@@ -29,17 +29,19 @@
   }
   &__body {
     tr {
-      border-bottom: 1px solid #e1e3e5;
+      border-bottom: 1px solid $gray-5;
       td {
         overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
         height: 30px;
         line-height: 30px;
         padding: 0 12px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
         font-size: 13px;
         color: $gray-150;
         &.cm-table--gray {
+          padding-right: 24px;
+          text-align: right;
           color: #777d87;
         }
       }
@@ -47,7 +49,7 @@
         background: #f5f6f7;
       }
       &:hover {
-        background: #f0f6fc;
+        background: $gray-3-1;
       }
     }
   }
@@ -73,8 +75,8 @@
     width: fit-content;
     height: 18px;
     line-height: 18px;
-    border-radius: 9px;
     padding: 0 6px;
+    border-radius: 9px;
     text-align: center;
     font-weight: 500;
     font-size: 12px;

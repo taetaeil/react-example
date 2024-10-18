@@ -9,9 +9,9 @@
     font-size: 12px;
     font-weight: 500;
     &[aria-expanded='true'] {
-      background: #ebf1fa;
+      background: $gray-4;
       & ~ fieldset {
-        border: 1px solid #6d8fc2 !important;
+        border: 1px solid $gray-130 !important;
       }
     }
   }
@@ -21,14 +21,14 @@
     }
   }
   fieldset {
-    border: 1px solid #d3d7de !important;
+    border: 1px solid $gray-10 !important;
   }
   &:hover {
     .MuiSelect-select {
-      background: #f2f5fa;
+      background: $gray-3;
     }
     fieldset {
-      border: 1px solid #a3b3cc !important;
+      border: 1px solid $gray-30 !important;
     }
   }
   .MuiSelect-iconOutlined {
@@ -60,12 +60,12 @@
     padding-top: 3px;
     padding-bottom: 3px;
     .MuiMenuItem-root {
-      padding: 0 9px;
       height: 26px;
       line-height: 26px;
+      padding: 0 9px;
       font-size: 12px;
       font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', Sans-serif;
-      color: #555759;
+      color: $gray-150;
       &.Mui-selected {
         background: #f0f2f5;
       }

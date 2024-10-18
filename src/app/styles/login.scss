@@ -18,12 +18,12 @@
     padding: 69px 48px 90px;
     margin-top: 104px;
     background: $white;
-    border: 1px solid #e6e8eb;
+    border: 1px solid $gray-8;
     border-radius: $radius-50;
     box-shadow: 0px 5px 10px #22262b26;
     &__title {
-      margin-bottom: 30px;
       line-height: 35px;
+      margin-bottom: 30px;
       text-align: center;
       font-weight: 500;
       font-size: 24px;
@@ -73,7 +73,7 @@
     }
     .cm-input {
       input {
-        background: #f7f8fa;
+        background: $gray-2;
       }
       & + .cm-input {
         margin-top: 12px;

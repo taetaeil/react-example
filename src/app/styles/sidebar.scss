@@ -3,7 +3,7 @@
 .sidebar {
   display: flex;
   height: calc(100% - $header-h);
-  min-width: 1680px;
+  min-width: 1180px;
   // padding: 30px 30px 30px 0;
   &__main {
     display: flex;
@@ -54,10 +54,10 @@
   .MuiRichTreeView-root {
     .MuiTreeItem-root {
       .MuiTreeItem-label {
+        display: flex;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        display: flex;
       }
     }
   }

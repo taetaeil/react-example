@@ -47,7 +47,7 @@ export default function Detail() {
     {
       status: '주의',
       model: 'Ko-pu-3401',
-      issueTime: '2023-08-12 00:00:000',
+      issueTime: '2023-08-12 00:00:00',
     },
     {
       status: '고장',
@@ -115,7 +115,7 @@ export default function Detail() {
                 <th>발생일시</th>
               </tr>
             }
-            colwidths={['10%', '*', '25%']}
+            colwidths={['60px', '*', '160px']}
             rows={rows.map((row, index) => (
               <tr key={index}>
                 <td>
