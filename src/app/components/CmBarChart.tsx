@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from 'react'
 import * as echarts from 'echarts'
 import type { ECharts, EChartsOption } from 'echarts'
+import '../styles/chart.scss'
 
 interface CmBarStackChartProps {
   title: string
@@ -122,7 +123,7 @@ export default function CmBarStackChart({
         <p className="chart__title">{title}</p>
         <span className="chart__info">총 {totalCount}대</span>
       </div>
-      <div ref={chartRef} style={{ width: '100%', height: '50px' }} />
+      <div ref={chartRef} style={{ width: '100%', height: '50px' }} className="cm-bar-chart"/>
     </>
   )
 }

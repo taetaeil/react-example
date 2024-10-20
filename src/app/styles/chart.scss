@@ -38,8 +38,30 @@
 
 .cm-status-line-chart {
   height: 230px;
+  & > div {
+    width: 100% !important;
+    canvas {
+      width: 100% !important;
+    }
+  }
 }
 
 .cm-line-chart {
   height: 230px;
+  width: 100%;
+  & > div {
+    width: 100% !important;
+    canvas {
+      width: 100% !important;
+    }
+  }
+}
+
+.cm-bar-chart {
+  & > div {
+    width: 100% !important;
+    canvas {
+      width: 100% !important;
+    }
+  }
 }
