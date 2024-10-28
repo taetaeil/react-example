@@ -5,7 +5,7 @@
   display: grid;
   gap: 14px;
   height: fit-content;
-  padding-right: 30px;
+  padding-right: 10px;
   &-box {
     display: flex;
     flex-flow: column;
@@ -17,7 +17,7 @@
     box-sizing: border-box;
     &__header {
       line-height: 20px;
-      margin-bottom: 14px;
+      margin-bottom: 11px;
       padding-right: 20px;
       &:has(.dashboard-box__utils, .dashboard-box__utils-btn) {
         display: flex;
@@ -141,7 +141,7 @@
   }
   //  ====================================== 대시보드/메인 스타일 ======================================
   &-main {
-    grid-template-columns: minmax(172px, 256px) minmax(565px, 664px) minmax(565px, 664px);
+    grid-template-columns: minmax(172px, 256px) minmax(553px, 664px) minmax(565px, 664px);
     grid-template-rows: 292px 486px;
 
     .dashboard-box {
@@ -219,7 +219,7 @@
         &-item {
           display: grid;
           justify-content: center;
-          grid-template-columns: repeat(auto-fill, 148px);
+          grid-template-columns: repeat(4, minmax(123px, 148px));
           grid-template-rows: repeat(auto-fill, 110px);
           gap: 10px;
           li {
@@ -403,6 +403,11 @@
       }
     }
     .dashboard-box {
+      &:nth-child(3) {
+        .dashboard-box__cont {
+          scrollbar-gutter: initial;
+        }
+      }
       &:nth-child(4) {
         grid-column: 1 / 4;
       }
@@ -418,6 +423,7 @@
         &-parts {
           display: flex;
           align-items: center;
+          height:100%;
           .parts {
             display: flex;
             flex-flow: column;
@@ -708,6 +714,11 @@
         &:last-child {
           margin-bottom: 14px;
         }
+        &__cont {
+          &-item {
+            grid-template-columns: repeat(8, minmax(109px,148px));
+          }
+        }
       }
     }
     &-detail {
@@ -719,4 +730,20 @@
       }
     }
   }
-} 
+}
+
+// responsive 1600
+@media (max-width: 1280px) { 
+  .dashboard {
+    &-main {
+      grid-template-columns: 268px 696px;
+      .dashboard-box {
+        &__cont {
+          &-item {
+            grid-template-columns: repeat(6, minmax(132px,181px));
+          }
+        }
+      }
+    }
+  }
+}

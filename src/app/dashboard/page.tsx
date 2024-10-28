@@ -325,7 +325,7 @@ export default function Main() {
                 <th>발행일시</th>
               </tr>
             }
-            colwidths={['40%', '15%', '15%', '30%']}
+            colwidths={['*', '21%', '10%', '27%']}
             rows={rows.map((row, index) => (
               <tr key={index}>
                 <td>

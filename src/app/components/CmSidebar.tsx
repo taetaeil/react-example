@@ -7,7 +7,7 @@ import CmTree from '../components/CmTree' // 트리메뉴
 import '../styles/sidebar.scss' // css 파일
 import CmIcon from './CmIcon' // icon 컴포넌트
 
-const drawerWidth = 240
+const drawerWidth = 273
 
 const openedMixin = (theme: Theme): CSSObject => ({
   width: drawerWidth,

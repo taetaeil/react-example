@@ -38,7 +38,7 @@ export default function CmBarStackChart({
         data: ['Category'],
       },
       grid: {
-        height: 12,
+        height: 16,
         top: 0,
         left: 0,
         right: 0,
@@ -53,7 +53,7 @@ export default function CmBarStackChart({
             position: 'insideBottomRight',
             align: 'right',
             verticalAlign: 'top',
-            offset: [0, 10],
+            offset: [5, 10],
             formatter: '{c}%',
             color: '#E84A51',
           },
@@ -71,7 +71,7 @@ export default function CmBarStackChart({
             position: 'insideBottomRight',
             align: 'right',
             verticalAlign: 'top',
-            offset: [0, 10],
+            offset: [5, 10],
             formatter: '{c}%',
             color: '#FCC347',
           },
@@ -89,7 +89,7 @@ export default function CmBarStackChart({
             position: 'insideBottomRight',
             align: 'right',
             verticalAlign: 'top',
-            offset: [0, 10],
+            offset: [5, 10],
             formatter: '{c}%',
             color: '#37AB3B',
           },
@@ -104,6 +104,9 @@ export default function CmBarStackChart({
     if (chartRef.current) {
       chartInstance.current = echarts.init(chartRef.current)
       chartInstance.current.setOption(option)
+      chartInstance.current.getZr().on('mousemove', function () {
+      chartInstance.current?.getZr().setCursorStyle('default') // cursor를 'default'로 설정
+    })
     }
 
     return () => {

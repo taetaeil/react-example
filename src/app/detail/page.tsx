@@ -115,7 +115,7 @@ export default function Detail() {
                 <th>발생일시</th>
               </tr>
             }
-            colwidths={['60px', '*', '160px']}
+            colwidths={['11%', '*', '30%']}
             rows={rows.map((row, index) => (
               <tr key={index}>
                 <td>
