@@ -81,12 +81,14 @@ export default function Detail() {
               <span className="parts__title">AS3-PU-021700000000000</span>
               <span className="parts__type">펌프</span>
             </div>
+            <div className="parts-img">
             <img
               src="/icons/sample-pump.png"
               alt="이미지"
               width="260px"
               height="auto"
-            />
+              />
+              </div>
           </div>
         </div>
       </li>

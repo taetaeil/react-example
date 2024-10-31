@@ -5,7 +5,7 @@
   display: grid;
   gap: 14px;
   height: fit-content;
-  padding-right: 10px;
+  padding-right: 30px;
   &-box {
     display: flex;
     flex-flow: column;
@@ -424,10 +424,12 @@
           display: flex;
           align-items: center;
           height:100%;
+          padding: 11px 4px;
+          gap: 24px;
           .parts {
             display: flex;
             flex-flow: column;
-            flex: 1 1 0%;
+            width: 50%;
             padding-right:5px;
             &__title {
               display: inline-block;
@@ -449,6 +451,13 @@
               font-weight: 500;
               font-size: 13px;
               color: $gray-100;
+            }
+            &-img {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 100%;
+              width: 50%;
             }
           }
         }
